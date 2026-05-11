@@ -1,0 +1,2028 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Módulo de Formas Configurables - Presentación Comercial</title>
+  <link rel="stylesheet" href="estilos-demo.css">
+  <link rel="stylesheet" href="print.css" media="print">
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    body {
+      hyphens: none;
+      -webkit-hyphens: none;
+      -ms-hyphens: none;
+    }
+    .comercial-header {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+      background-image: url('ImagenEmpresa.png');
+      background-repeat: no-repeat;
+      background-position: center center;
+      background-size: cover;
+      min-height: calc(120px + 1cm);
+    }
+    .comercial-header .title-wrap {
+      max-width: 65%;
+      min-width: 200px;
+      text-align: right;
+      padding: 0.6rem 0 0.75rem 0;
+      color: var(--primary-dark);
+      border-bottom: 2px solid rgba(0, 33, 113, 0.2);
+    }
+    .comercial-header .title-wrap h1 {
+      font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+      color: var(--primary-dark);
+      font-weight: 600;
+      letter-spacing: 0.015em;
+      line-height: 1.5;
+      margin: 0;
+    }
+    .comercial-header .title-wrap h1 .header-line-1 {
+      display: block;
+      font-size: 1.15rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      margin-bottom: 0.35rem;
+      text-transform: uppercase;
+    }
+    .comercial-header .title-wrap h1 .header-line-2,
+    .comercial-header .title-wrap h1 .header-line-3 {
+      display: block;
+      font-size: 1.18rem;
+      font-weight: 600;
+      letter-spacing: 0.01em;
+    }
+    .comercial-header .title-wrap h1 .header-line-2 { margin-bottom: 0.2rem; }
+    .comercial-header .title-wrap p {
+      color: var(--primary-dark);
+    }
+    .comercial-header .title-wrap .header-tagline {
+      font-size: 1.05rem;
+      line-height: 1.45;
+      font-weight: 400;
+      letter-spacing: 0.01em;
+      margin-top: 0.35rem;
+      opacity: 0.95;
+    }
+    .punto-clave {
+      display: flex;
+      gap: 1rem;
+      align-items: flex-start;
+      margin-bottom: 1.5rem;
+      padding: 1rem 1.25rem;
+      background: #fafafa;
+      border-radius: 8px;
+    }
+    .punto-clave .numero {
+      flex-shrink: 0;
+      width: 28px;
+      height: 28px;
+      background: var(--primary);
+      color: white;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 0.9rem;
+    }
+    .punto-clave .texto h4 {
+      margin-bottom: 0.25rem;
+      color: var(--primary-dark);
+      font-size: 1rem;
+    }
+    .punto-clave .texto p {
+      margin: 0;
+      color: var(--text);
+      font-size: 0.95rem;
+      line-height: 1.5;
+    }
+    .punto-clave-expandido .texto p { margin-bottom: 0.75rem; }
+    .punto-clave-expandido .texto p:last-of-type { margin-bottom: 0; }
+    .ciclo-desarrollo {
+      margin: 0.75rem 0 0;
+      padding-left: 1.25rem;
+      color: var(--text);
+      font-size: 0.9rem;
+      line-height: 1.6;
+    }
+    .ciclo-desarrollo li {
+      margin-bottom: 0.5rem;
+    }
+    .ciclo-desarrollo li:last-child {
+      margin-bottom: 0;
+    }
+    .punto-clave.texto-justificado .texto p,
+    .punto-clave.texto-justificado .texto .ciclo-desarrollo,
+    .punto-clave.texto-justificado .texto .ciclo-desarrollo li {
+      text-align: justify;
+    }
+    .subpunto-item.subpunto-definicion-json .subpunto-texto { text-align: justify; }
+    .subpunto-item.subpunto-registro-tablas .subpunto-texto { text-align: justify; }
+    .subpunto-item.subpunto-backend-carga .subpunto-texto { text-align: justify; }
+    .subpunto-item.subpunto-dynamicform .subpunto-texto { text-align: justify; }
+    .subpunto-item.subpunto-componentes .subpunto-texto { text-align: justify; }
+    .subpunto-item.subpunto-consultas .subpunto-consultas-arriba { text-align: justify; }
+    .subpunto-item.subpunto-consultas .subpunto-consultas-fila .subpunto-texto { text-align: justify; }
+    .subpunto-item.subpunto-mantenimiento { flex-direction: column; align-items: stretch; }
+    .subpunto-mantenimiento-arriba { margin-bottom: 1rem; font-size: 0.95rem; line-height: 1.55; color: var(--text); text-align: justify; }
+    .subpunto-mantenimiento-arriba strong { color: var(--primary-dark); }
+    .subpunto-mantenimiento-fila { display: flex; flex-direction: row; align-items: flex-start; gap: 1.25rem; margin-left: -1rem; margin-right: -1rem; width: calc(100% + 2rem); }
+    .subpunto-mantenimiento-fila .subpunto-img { flex-shrink: 0; width: 400px; height: 257px; object-fit: contain; object-position: left top; border-radius: 6px; box-shadow: 0 1px 4px rgba(0,0,0,0.1); order: 1; background: #fafafa; }
+    .subpunto-mantenimiento-fila .subpunto-texto { flex: 1; min-width: 0; margin: 0; order: 2; text-align: justify; }
+    .subpunto-item.subpunto-mantenimiento .subpunto-texto { text-align: justify; }
+    .subpunto-item.subpunto-despliegue .subpunto-texto { text-align: justify; }
+    .subpunto-item {
+      display: flex;
+      gap: 1.25rem;
+      align-items: flex-start;
+      margin-bottom: 1.5rem;
+      padding: 1rem;
+      background: #fafafa;
+      border-radius: 8px;
+    }
+    .subpunto-item:last-child { margin-bottom: 0; }
+    .subpunto-img {
+      flex-shrink: 0;
+      width: 280px;
+      height: 180px;
+      object-fit: cover;
+      border-radius: 6px;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.1);
+    }
+    .subpunto-texto { flex: 1; min-width: 0; }
+    .subpunto-texto strong { color: var(--primary-dark); }
+    .subpunto-item.img-derecha { flex-direction: row-reverse; }
+    .subpunto-item.img-abajo { flex-direction: column; align-items: center; }
+    .subpunto-item.img-abajo .subpunto-img { width: 100%; max-width: 400px; height: auto; min-height: 180px; }
+    .subpunto-item.img-ampliada .subpunto-img { width: 420px; height: 260px; }
+    .subpunto-item.img-debajo { flex-direction: column; align-items: center; }
+    .subpunto-item.img-debajo .subpunto-img { order: 2; width: 100%; max-width: 480px; height: auto; min-height: 240px; margin-top: 0.75rem; }
+    .subpunto-item.p1-verde { background: rgba(27, 94, 32, 0.04); }
+    .subpunto-item.p1-verde .subpunto-texto strong { color: #2e7d32; }
+    .subpunto-item.p1-naranja { background: rgba(230, 81, 0, 0.04); }
+    .subpunto-item.p1-naranja .subpunto-texto strong { color: #ef6c00; }
+    .subpunto-item.subpunto-consultas { flex-direction: column; align-items: stretch; }
+    .subpunto-consultas-arriba { margin-bottom: 1rem; font-size: 0.95rem; line-height: 1.55; color: var(--text); }
+    .subpunto-consultas-arriba strong { color: var(--primary-dark); }
+    .subpunto-consultas-fila { display: flex; flex-direction: row; align-items: flex-start; gap: 1.25rem; }
+    .subpunto-consultas-fila .subpunto-texto { flex: 1; min-width: 0; margin: 0; }
+    .subpunto-consultas-fila .subpunto-img { flex-shrink: 0; width: 364px; height: 234px; object-fit: cover; border-radius: 6px; box-shadow: 0 1px 4px rgba(0,0,0,0.1); }
+    .ilustracion {
+      margin-top: 1.5rem;
+      margin-bottom: 2rem;
+    }
+    .ilustracion h3 {
+      font-size: 1rem;
+      color: var(--primary-dark);
+      margin-bottom: 0.75rem;
+    }
+    .ilustracion-container {
+      background: #f5f5f5;
+      border-radius: 8px;
+      padding: 1rem;
+      min-height: 320px;
+    }
+    .ilustracion-container object,
+    .ilustracion-container iframe {
+      width: 100%;
+      height: 400px;
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      background: white;
+    }
+    .ilustracion-container .pdf-link {
+      display: inline-block;
+      margin-top: 0.5rem;
+      font-size: 0.875rem;
+      color: var(--primary);
+      text-decoration: none;
+    }
+    .ilustracion-container .pdf-link:hover {
+      text-decoration: underline;
+    }
+    .ilustraciones-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+      margin-top: 1rem;
+    }
+    .ilustracion-card {
+      background: var(--bg-card);
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+    }
+    .ilustracion-card .card-header {
+      padding: 0.75rem 1rem;
+      font-size: 0.95rem;
+    }
+    .ilustracion-card .card-body {
+      padding: 1rem;
+    }
+    .highlight-box {
+      background: linear-gradient(135deg, #e3f2fd 0%, #e8f5e9 100%);
+      border: 1px solid var(--primary);
+      border-radius: var(--radius-lg);
+      padding: 1.5rem;
+      margin: 1.5rem 0;
+    }
+    .highlight-box p {
+      margin: 0;
+      font-size: 1rem;
+      line-height: 1.6;
+      color: var(--text);
+    }
+    .punto2-subpuntos { margin-top: 1rem; }
+    .punto2-item {
+      display: flex;
+      gap: 1.25rem;
+      align-items: flex-start;
+      margin-bottom: 1.5rem;
+      padding: 1rem;
+      border-radius: 8px;
+    }
+    .punto2-item:last-child { margin-bottom: 0; }
+    .punto2-item.item-verde { background: linear-gradient(to right, rgba(27, 94, 32, 0.06), transparent); }
+    .punto2-item.item-naranja { background: linear-gradient(to right, rgba(230, 81, 0, 0.06), transparent); }
+    .punto2-item .punto2-img {
+      flex-shrink: 0;
+      width: 280px;
+      height: 180px;
+      object-fit: cover;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(27, 94, 32, 0.15);
+    }
+    .punto2-item.item-naranja .punto2-img { box-shadow: 0 2px 8px rgba(230, 81, 0, 0.15); }
+    .punto2-item .punto2-texto { flex: 1; min-width: 0; }
+    .punto2-item .punto2-texto strong { color: #1b5e20; }
+    .punto2-item.item-naranja .punto2-texto strong { color: #e65100; }
+    .punto2-lista {
+      margin: 0.75rem 0 0;
+      padding-left: 1.5rem;
+      font-size: 0.95rem;
+      line-height: 1.6;
+      color: var(--text);
+    }
+    .punto2-lista li { margin-bottom: 0.6rem; }
+    .punto2-lista li:last-child { margin-bottom: 0; }
+    .punto2-item.img-derecha { flex-direction: row-reverse; }
+    .punto2-item.img-abajo { flex-direction: column; align-items: center; }
+    .punto2-item.img-abajo .punto2-img { width: 100%; max-width: 400px; height: auto; min-height: 180px; margin-top: 0.5rem; order: 2; }
+    .punto2-item.punto2-modulos.img-abajo .punto2-img { max-width: 600px; min-height: 270px; }
+    .punto2-desglose {
+      margin-top: 1.25rem;
+      padding: 1rem 1.25rem;
+      background: rgba(0, 0, 0, 0.03);
+      border-radius: var(--radius);
+      width: 100%;
+      max-width: 100%;
+      order: 3;
+    }
+    .punto2-desglose p {
+      margin: 0 0 0.75rem 0;
+      font-size: 0.95rem;
+      line-height: 1.55;
+      color: var(--text);
+    }
+    .punto2-desglose p:last-of-type { margin-bottom: 0; }
+    .punto2-desglose ul {
+      margin: 0.5rem 0 1rem 1.5rem;
+      padding: 0;
+      font-size: 0.95rem;
+      line-height: 1.6;
+      color: var(--text);
+    }
+    .punto2-desglose li { margin-bottom: 0.5rem; }
+    .punto2-desglose li:last-child { margin-bottom: 0; }
+    .punto2-item.punto2-ibforms { flex-direction: column; align-items: stretch; }
+    .punto2-ibforms-arriba { margin-bottom: 1rem; font-size: 0.95rem; line-height: 1.55; color: var(--text); text-align: justify; }
+    .punto2-ibforms-arriba strong { color: #e65100; }
+    .punto2-ibforms-fila { display: flex; flex-direction: row; align-items: flex-start; gap: 1.25rem; }
+    .punto2-ibforms-fila .punto2-texto { flex: 1; min-width: 0; margin: 0; text-align: justify; }
+    .punto2-ibforms-fila .punto2-img { flex-shrink: 0; width: 364px; height: 234px; object-fit: cover; border-radius: 6px; box-shadow: 0 2px 8px rgba(230, 81, 0, 0.15); }
+    .punto2-item.punto2-ibforms .punto2-img { margin-top: 0; }
+    .punto2-item.punto2-modulos .punto2-texto { text-align: justify; }
+    .punto2-item.punto2-modulos .punto2-desglose p,
+    .punto2-item.punto2-modulos .punto2-desglose li { text-align: justify; }
+    .punto2-item.punto2-ibforms .punto2-texto { text-align: justify; }
+    .punto2-item.punto2-como-construir .punto2-texto { text-align: justify; }
+    .punto2-item.punto2-como-construir .punto2-lista,
+    .punto2-item.punto2-como-construir .punto2-lista li { text-align: justify; }
+    .punto2-item.punto2-como-construir.img-abajo .punto2-img { max-width: 560px; min-height: 200px; }
+    .punto2-item.punto2-despliegue.img-abajo .punto2-img { max-width: 520px; min-height: 235px; }
+    /* Comparativa y casos de uso */
+    .comparativa-tabla {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1rem 0;
+      font-size: 0.95rem;
+    }
+    .comparativa-tabla th,
+    .comparativa-tabla td {
+      border: 1px solid var(--border);
+      padding: 0.75rem 1rem;
+      text-align: left;
+    }
+    .comparativa-tabla th {
+      background: var(--primary-dark);
+      color: white;
+      font-weight: 600;
+    }
+    .comparativa-tabla tr:nth-child(even) { background: #fafafa; }
+    .comparativa-tabla .check { color: var(--success); font-weight: bold; }
+    .comparativa-tabla .cross { color: #c62828; }
+    .tabla-estimacion {
+      width: 100%;
+      max-width: 560px;
+      border-collapse: collapse;
+      margin: 1rem auto;
+      font-size: 0.95rem;
+    }
+    .tabla-estimacion th,
+    .tabla-estimacion td {
+      border: 1px solid var(--border);
+      padding: 0.6rem 1rem;
+      text-align: left;
+    }
+    .tabla-estimacion th {
+      background: var(--primary-dark);
+      color: white;
+      font-weight: 600;
+    }
+    .tabla-estimacion tr:nth-child(even) { background: #fafafa; }
+    .tabla-funcionalidades-portal {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1rem 0 1.25rem 0;
+      font-size: 0.9rem;
+      border-radius: var(--radius);
+      overflow: hidden;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.06);
+    }
+    .tabla-funcionalidades-portal th {
+      background: var(--primary-dark);
+      color: white;
+      font-weight: 600;
+      padding: 0.75rem 1rem;
+      text-align: left;
+      border: none;
+    }
+    .tabla-funcionalidades-portal td {
+      padding: 0.65rem 1rem;
+      border-bottom: 1px solid var(--border);
+      vertical-align: top;
+      color: var(--text);
+    }
+    .tabla-funcionalidades-portal tr:last-child td { border-bottom: none; }
+    .tabla-funcionalidades-portal tr:nth-child(even) td { background: #fafafa; }
+    .tabla-funcionalidades-portal tr:hover td { background: #f5f8fa; }
+    .tabla-funcionalidades-portal .grupo-nombre { font-weight: 600; color: var(--primary-dark); white-space: nowrap; }
+    .tabla-funcionalidades-portal .grupo-items { margin: 0; padding-left: 1.1rem; line-height: 1.6; }
+    .tabla-modulo-alcance {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 0.5rem 0 0.75rem 0;
+      font-size: 0.9rem;
+      border-radius: var(--radius);
+      overflow: hidden;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.06);
+      table-layout: fixed;
+    }
+    .tabla-modulo-alcance th,
+    .tabla-modulo-alcance td {
+      border-bottom: 1px solid var(--border);
+      padding: 0.65rem 1rem;
+      text-align: left;
+      vertical-align: top;
+      color: var(--text);
+      line-height: 1.55;
+    }
+    .tabla-modulo-alcance thead tr:first-child th {
+      background: var(--primary-dark);
+      color: white;
+      font-weight: 700;
+      font-size: 1rem;
+      text-align: center;
+      padding: 0.75rem 1rem;
+      border-bottom: none;
+    }
+    .tabla-modulo-alcance thead tr:nth-child(2) th {
+      background: var(--primary-dark);
+      color: white;
+      font-weight: 600;
+      font-size: 0.9rem;
+      border-top: 1px solid rgba(255,255,255,0.25);
+    }
+    .tabla-modulo-alcance col.col-modulo-caracteristicas { width: 85%; }
+    .tabla-modulo-alcance col.col-modulo-tiempo { width: 15%; }
+    .tabla-modulo-alcance tbody tr:last-child td { border-bottom: none; }
+    .tabla-modulo-alcance tbody tr:nth-child(even) td:first-child { background: #fafafa; }
+    .tabla-modulo-alcance .celda-tiempo-modulo {
+      vertical-align: middle;
+      text-align: center;
+      font-weight: 600;
+      color: var(--primary-dark);
+      background: #f0f4f8;
+      border-left: 1px solid var(--border);
+      writing-mode: vertical-rl;
+      text-orientation: upright;
+      text-transform: uppercase;
+      white-space: nowrap;
+      letter-spacing: 0.04em;
+    }
+    .modulo-alcance-observaciones {
+      margin: 0.65rem 0 0 0;
+      padding: 0.9rem 1.1rem 1rem;
+      background: linear-gradient(180deg, #fff9e6 0%, #fff3cc 100%);
+      border: 1px solid rgba(180, 110, 0, 0.38);
+      border-left: 5px solid #c67600;
+      border-radius: 8px;
+      box-shadow: 0 2px 10px rgba(140, 80, 0, 0.08);
+    }
+    .modulo-alcance-observaciones-titulo {
+      margin: 0 0 0.55rem 0;
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: #7a4200;
+      letter-spacing: 0.02em;
+    }
+    .modulo-alcance-observaciones-texto {
+      margin: 0;
+      font-size: 0.9rem;
+      line-height: 1.58;
+      color: var(--text);
+      text-align: justify;
+    }
+    .modulo-alcance-observaciones-texto p { margin: 0 0 0.55rem 0; }
+    .modulo-alcance-observaciones-texto p:last-child { margin-bottom: 0; }
+    .modulo-alcance-observaciones-texto ul {
+      margin: 0.35rem 0 0;
+      padding-left: 1.2rem;
+    }
+    .modulo-alcance-observaciones-texto > ul:first-child {
+      margin-top: 0;
+    }
+    .modulo-alcance-observaciones-texto li { margin-bottom: 0.4rem; }
+    .modulo-alcance-observaciones-texto li:last-child { margin-bottom: 0; }
+
+    .servicios-bso-embed .servicios-subtitulo-presentacion {
+      margin: 1rem 0 0.65rem 0;
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--primary-dark);
+      letter-spacing: 0.02em;
+      border-bottom: 2px solid rgba(0, 33, 113, 0.15);
+      padding-bottom: 0.35rem;
+    }
+    .servicios-bso-embed .screen > .servicios-subtitulo-presentacion:first-of-type {
+      margin-top: 0.35rem;
+    }
+    .servicios-bso-embed .servicios-subtitulo-propuesta {
+      margin-top: 1.5rem;
+    }
+    .servicios-bso-embed .servicios-texto-propuesta {
+      margin: 0 0 0.25rem 0;
+      padding: 0.85rem 1rem;
+      font-size: 0.9rem;
+      font-style: italic;
+      color: var(--text-muted);
+      background: rgba(0, 33, 113, 0.04);
+      border-radius: 8px;
+      border: 1px dashed rgba(0, 33, 113, 0.2);
+    }
+    .servicios-bso-embed .servicios-bloque-actual {
+      margin-bottom: 0.15rem;
+    }
+    .servicios-bso-embed .servicios-bloque-propuesta {
+      margin-top: 0.35rem;
+      margin-bottom: 0.25rem;
+    }
+    /* Acceso al portal: imágenes al 65% del ancho útil (reducción del 35%) */
+    .servicios-bso-embed #pantalla-1.screen-acceso .figure-screen img {
+      width: 65%;
+      max-width: 100%;
+      height: auto;
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    /* Consultas → Pólizas: misma reducción del 35% */
+    .servicios-bso-embed #consulta-polizas .figure-screen img {
+      width: 65%;
+      max-width: 100%;
+      height: auto;
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    /* Consultas → Siniestros: misma reducción del 35% */
+    .servicios-bso-embed #consulta-siniestros .figure-screen img {
+      width: 65%;
+      max-width: 100%;
+      height: auto;
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .servicios-bso-embed .notificacion-tipo h4.consulta-intra-presentacion {
+      font-size: 0.97rem;
+      margin-top: 0.75rem;
+      margin-bottom: 0.45rem;
+    }
+    .servicios-bso-embed .notificacion-tipo h4.consulta-intra-presentacion.servicios-subtitulo-propuesta {
+      margin-top: 1.15rem;
+    }
+    .servicios-bso-embed .notificacion-tipo .consulta-bloque-actual {
+      margin-bottom: 0.15rem;
+    }
+    .servicios-bso-embed .consulta-propuesta-partes {
+      margin-top: 0.35rem;
+    }
+    .servicios-bso-embed .consulta-propuesta-parte + .consulta-propuesta-parte {
+      margin-top: 1.35rem;
+      padding-top: 1rem;
+      border-top: 1px solid rgba(0, 33, 113, 0.12);
+    }
+    .servicios-bso-embed .consulta-propuesta-parte-titulo {
+      margin: 0 0 0.6rem 0;
+      font-size: 0.92rem;
+      font-weight: 700;
+      color: var(--primary-dark);
+    }
+    /* Perfil de Usuario: 30% más pequeñas que las demás capturas de #pantalla-4 (70% × 70% ≈ 49% del contenedor) */
+    /* Afiliación y Autogestión (#pantalla-4): imágenes al 70% (reducción del 30%), excepto Olvido de Clave (.figure-row) */
+    .servicios-bso-embed #pantalla-4 .figure-screen img {
+      width: 70%;
+      max-width: 100%;
+      height: auto;
+      margin-left: auto;
+      margin-right: auto;
+      display: block;
+    }
+    .servicios-bso-embed #pantalla-4 ul.perfil-usuario-capturas .figure-screen img {
+      width: 49%;
+      max-width: 100%;
+      height: auto;
+      margin-left: auto;
+      margin-right: auto;
+      display: block;
+    }
+    .servicios-bso-embed #pantalla-4 .figure-row .figure-screen img {
+      width: 100%;
+      max-width: 100%;
+      height: auto;
+      margin-left: 0;
+      margin-right: 0;
+      display: block;
+    }
+
+    /* Notificación de Pago (#pantalla-2): imágenes al 70% del ancho de referencia (reducción del 30%) */
+    .servicios-bso-embed #pantalla-2 .figure-screen img {
+      width: 70%;
+      max-width: 100%;
+      height: auto;
+      margin-left: auto;
+      margin-right: auto;
+      display: block;
+    }
+
+    /* Arquitectura de despliegue (propuesta/despliegue-produccion.html) */
+    .despliegue-arquitectura-logica {
+      margin: 0.65rem 0 0 0;
+      max-width: 100%;
+      box-sizing: border-box;
+    }
+    .despliegue-arquitectura-intro {
+      margin: 0 0 0.85rem 0;
+      padding: 0;
+      color: var(--text);
+      font-size: 0.9rem;
+      line-height: 1.52;
+      text-align: justify;
+    }
+    .despliegue-arquitectura-figure {
+      margin: 0.75rem 0 0.5rem 0;
+      padding: 0;
+      text-align: center;
+      max-width: 100%;
+    }
+    .despliegue-arquitectura-figure svg {
+      max-width: 100%;
+      height: auto;
+      display: block;
+      margin: 0 auto;
+    }
+    .despliegue-arquitectura-caption {
+      margin: 0.45rem 0 0 0;
+      padding: 0 0.35rem;
+      font-size: 0.88rem;
+      line-height: 1.45;
+      color: var(--text-muted);
+      text-align: center;
+    }
+    .despliegue-arquitectura-servidores {
+      margin: 1rem 0 0 0;
+      padding: 0.85rem 0.95rem;
+      border-radius: 12px;
+      border: 1px solid rgba(226, 232, 240, 0.95);
+      background: rgba(248, 250, 252, 0.85);
+      box-sizing: border-box;
+    }
+    .despliegue-arquitectura-servidores-lead {
+      margin: 0 0 0.55rem 0;
+      padding: 0;
+      color: var(--text);
+      font-size: 0.9rem;
+      line-height: 1.52;
+      text-align: justify;
+    }
+    .despliegue-arquitectura-servidores-list {
+      margin: 0;
+      padding: 0 0 0 1.2rem;
+      color: var(--text);
+      font-size: 0.88rem;
+      line-height: 1.5;
+      text-align: justify;
+    }
+    .despliegue-arquitectura-servidores-list li {
+      margin: 0.45rem 0 0 0;
+    }
+    .despliegue-arquitectura-servidores-list li:first-child {
+      margin-top: 0;
+    }
+    .despliegue-arquitectura-servidores-sub {
+      margin: 0.4rem 0 0 0;
+      padding: 0 0 0 1.1rem;
+      list-style-type: disc;
+      font-size: 0.86rem;
+      line-height: 1.48;
+    }
+    .despliegue-arquitectura-servidores-sub li {
+      margin: 0.28rem 0 0 0;
+    }
+    .despliegue-arquitectura-servidores-sub li:first-child {
+      margin-top: 0;
+    }
+
+    /* Secuencia de etapas (propuesta/despliegue-produccion.html) */
+    .despliegue-secuencia-etapas {
+      margin: 0.65rem 0 0 0;
+      max-width: 100%;
+      box-sizing: border-box;
+    }
+    .despliegue-secuencia-intro {
+      margin: 0 0 0.85rem 0;
+      padding: 0;
+      color: var(--text);
+      font-size: 0.9rem;
+      line-height: 1.52;
+      text-align: justify;
+    }
+    .despliegue-secuencia-etapas .diagram-card {
+      position: relative;
+      background: #ffffff;
+      border-radius: 14px;
+      padding: 1.25rem 1rem 1rem;
+      margin: 0.75rem 0 0.5rem;
+      overflow-x: auto;
+      box-shadow: 0 4px 24px rgba(15, 23, 42, 0.08);
+      border: 1px solid rgba(226, 232, 240, 0.9);
+    }
+    .despliegue-secuencia-etapas .diagram-card::before {
+      content: "";
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 4px;
+      border-radius: 14px 14px 0 0;
+      background: linear-gradient(90deg, #0ea5e9, #6366f1, #a855f7);
+    }
+    .despliegue-secuencia-etapas .diagram-card.despliegue-secuencia-steps::before {
+      background: linear-gradient(90deg, #f59e0b, #ef4444, #ec4899);
+    }
+    .despliegue-secuencia-etapas .diagram-card .diagram-caption {
+      font-size: 0.88rem;
+      color: var(--text-muted);
+      text-align: center;
+      margin: 0.5rem 0 0;
+      padding: 0 0.5rem;
+    }
+    .despliegue-secuencia-etapas .diagram-card svg {
+      max-width: 100%;
+      height: auto;
+      display: block;
+    }
+    .despliegue-secuencia-list {
+      margin: 0.9rem 0 0;
+      padding-left: 1.25rem;
+      color: var(--text);
+      font-size: 0.9rem;
+      line-height: 1.5;
+      text-align: justify;
+    }
+    .despliegue-secuencia-list li { margin: 0.25rem 0; }
+
+    /* Tabla de aristas */
+    .despliegue-tabla-aristas {
+      margin: 0.65rem 0 0 0;
+      max-width: 100%;
+      box-sizing: border-box;
+    }
+    .despliegue-tabla-aristas-intro {
+      margin: 0 0 0.85rem 0;
+      padding: 0;
+      color: var(--text);
+      font-size: 0.9rem;
+      line-height: 1.52;
+      text-align: justify;
+    }
+    .despliegue-aristas-criteria {
+      width: 100%;
+      border-collapse: separate;
+      border-spacing: 0;
+      font-size: 0.88rem;
+      margin: 0.5rem 0 1rem;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 4px 24px rgba(15, 23, 42, 0.08);
+      border: 1px solid #e2e8f0;
+    }
+    .despliegue-aristas-criteria th,
+    .despliegue-aristas-criteria td {
+      padding: 0.55rem 0.75rem;
+      text-align: left;
+      vertical-align: top;
+      border-bottom: 1px solid #e2e8f0;
+    }
+    .despliegue-aristas-criteria tr:last-child td { border-bottom: none; }
+    .despliegue-aristas-criteria thead th {
+      background: linear-gradient(180deg, #0c4a6e 0%, #075985 100%);
+      color: #f8fafc;
+      font-weight: 600;
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      border-bottom: none;
+    }
+    .despliegue-aristas-criteria tbody tr:nth-child(even) { background: #f8fafc; }
+    .despliegue-aristas-criteria .despliegue-aristas-dim {
+      font-weight: 700;
+      color: #0369a1;
+      width: 26%;
+      border-left: 4px solid #0ea5e9;
+      background: linear-gradient(90deg, rgba(224, 242, 254, 0.6), transparent);
+    }
+    .despliegue-aristas-criteria code {
+      font-size: 0.84em;
+      background: #e0f2fe;
+      padding: 0.12em 0.35em;
+      border-radius: 4px;
+      color: #0c4a6e;
+    }
+    .despliegue-aristas-callout {
+      background: linear-gradient(135deg, #ecfeff 0%, #e0f2fe 100%);
+      border: 1px solid #bae6fd;
+      border-radius: 14px;
+      padding: 0.9rem 1rem;
+      margin: 1rem 0 0;
+      font-size: 0.88rem;
+      line-height: 1.5;
+      box-shadow: 0 2px 12px rgba(14, 165, 233, 0.12);
+      text-align: justify;
+      color: var(--text);
+    }
+    .despliegue-aristas-callout strong { color: #0369a1; }
+
+    .servicios-bso-embed .consulta-propuesta-provisional-nota {
+      margin: 0 0 0.65rem 0;
+      font-size: 0.85rem;
+      line-height: 1.45;
+      color: var(--text-muted);
+      font-style: italic;
+    }
+    .servicios-bso-embed .resaltado-por-definir {
+      background: #ffe5e5;
+      border: 1px dashed #cc1f1f;
+      color: #8a1010;
+    }
+    /* Misma señalización en pantallas .screen fuera del embed (p. ej. Olvido de Clave) */
+    .screen .servicios-texto-propuesta.resaltado-por-definir {
+      margin: 0 0 0.25rem 0;
+      padding: 0.85rem 1rem;
+      font-size: 0.9rem;
+      background: #ffe5e5;
+      border: 1px dashed #cc1f1f;
+      color: #8a1010;
+    }
+    .servicios-bso-embed .recuadro-similar-reembolso {
+      background: #e8f5e9;
+      border: 1px solid #a5d6a7;
+      color: #1b5e20;
+      border-radius: 6px;
+    }
+
+    .apartado-propuesta-consolidada-final {
+      margin-top: 2rem;
+      padding-top: 0.25rem;
+    }
+    .apartado-propuesta-consolidada-final .bloque-propuesta-consolidada {
+      margin-top: 0;
+    }
+    .bloque-propuesta-consolidada {
+      margin-top: 1.75rem;
+      padding: 1.35rem 1.4rem 1.45rem;
+      background: linear-gradient(165deg, #e8f0f8 0%, #ffffff 42%, #f9fbfd 100%);
+      border: 1px solid rgba(0, 33, 113, 0.16);
+      border-left: 5px solid var(--primary);
+      border-radius: 10px;
+      box-shadow: 0 6px 22px rgba(0, 33, 113, 0.1);
+    }
+    .bloque-propuesta-consolidada .titulo-resumen-servicios {
+      margin: 0 0 0.55rem 0;
+      font-size: 1.12rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 2px solid rgba(13, 71, 161, 0.2);
+      letter-spacing: 0.02em;
+    }
+    .bloque-propuesta-consolidada .intro-resumen-servicios {
+      margin: 0 0 0.9rem 0;
+      font-size: 0.9rem;
+      color: var(--text);
+      text-align: justify;
+      line-height: 1.52;
+    }
+    .tabla-resumen-servicios-total {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 0.75rem 0 0.5rem 0;
+      font-size: 0.9rem;
+      border-radius: var(--radius);
+      overflow: hidden;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.06);
+    }
+    .bloque-propuesta-consolidada .tabla-resumen-servicios-total {
+      margin: 0;
+      box-shadow: 0 4px 16px rgba(0, 33, 113, 0.14);
+      border: 1px solid rgba(0, 33, 113, 0.12);
+    }
+    .tabla-resumen-servicios-total th,
+    .tabla-resumen-servicios-total td {
+      border-bottom: 1px solid var(--border);
+      padding: 0.6rem 0.85rem;
+      text-align: left;
+      vertical-align: top;
+      color: var(--text);
+    }
+    .tabla-resumen-servicios-total thead th {
+      background: var(--primary-dark);
+      color: white;
+      font-weight: 600;
+      border-bottom: none;
+      padding: 0.7rem 0.9rem;
+    }
+    .bloque-propuesta-consolidada .tabla-resumen-servicios-total thead th {
+      background: linear-gradient(180deg, #002a7a 0%, var(--primary-dark) 100%);
+    }
+    .tabla-resumen-servicios-total tbody tr:nth-child(even) td { background: #fafafa; }
+    .tabla-resumen-servicios-total tfoot th,
+    .tabla-resumen-servicios-total tfoot td {
+      background: #e8eef4;
+      font-weight: 600;
+      color: var(--primary-dark);
+      border-bottom: none;
+      padding: 0.65rem 0.9rem;
+    }
+    /* Bloque de totales: separado visualmente del listado de módulos */
+    .bloque-propuesta-consolidada .tabla-resumen-servicios-total tfoot.resumen-propuesta-totales th,
+    .bloque-propuesta-consolidada .tabla-resumen-servicios-total tfoot.resumen-propuesta-totales td {
+      padding: 0.78rem 1rem;
+      border-bottom: none;
+    }
+    .bloque-propuesta-consolidada .tabla-resumen-servicios-total tfoot.resumen-propuesta-totales tr:first-child th,
+    .bloque-propuesta-consolidada .tabla-resumen-servicios-total tfoot.resumen-propuesta-totales tr:first-child td {
+      background: linear-gradient(180deg, #f0f5fb 0%, #e2ecf6 100%);
+      border-top: 3px solid var(--primary);
+      box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.7);
+      font-weight: 600;
+      color: var(--primary-dark);
+    }
+    .bloque-propuesta-consolidada .tabla-resumen-servicios-total tfoot.resumen-propuesta-totales tr:nth-child(2) th,
+    .bloque-propuesta-consolidada .tabla-resumen-servicios-total tfoot.resumen-propuesta-totales tr:nth-child(2) td {
+      background: linear-gradient(180deg, #d8e4f2 0%, #cadcf0 100%);
+      border-top: 1px solid rgba(0, 33, 113, 0.14);
+      font-weight: 700;
+      color: #0a2a66;
+    }
+    .bloque-propuesta-consolidada .tabla-resumen-servicios-total tfoot.resumen-propuesta-totales tr:last-child th,
+    .bloque-propuesta-consolidada .tabla-resumen-servicios-total tfoot.resumen-propuesta-totales tr:last-child td {
+      background: linear-gradient(165deg, #002a7a 0%, var(--primary-dark) 55%, #001d5c 100%);
+      color: #fff;
+      border-top: 1px solid rgba(255, 255, 255, 0.2);
+      font-weight: 700;
+      text-shadow: 0 1px 0 rgba(0, 0, 0, 0.2);
+    }
+    .bloque-propuesta-consolidada .tabla-resumen-servicios-total tfoot.resumen-propuesta-totales tr:last-child td {
+      font-size: 1.08rem;
+      letter-spacing: 0.02em;
+    }
+    .bloque-propuesta-consolidada .tabla-resumen-servicios-total tfoot.resumen-propuesta-totales tr:last-child th {
+      border-bottom-left-radius: 10px;
+    }
+    .bloque-propuesta-consolidada .tabla-resumen-servicios-total tfoot.resumen-propuesta-totales tr:last-child td {
+      border-bottom-right-radius: 10px;
+    }
+    /* Filas de módulos: más contraste y lectura tipo “puntos” */
+    .bloque-propuesta-consolidada .tabla-resumen-servicios-total tbody tr td {
+      padding: 0.72rem 0.95rem;
+    }
+    .bloque-propuesta-consolidada .tabla-resumen-servicios-total tbody tr:nth-child(odd) td {
+      background: #f5f8fc;
+    }
+    .bloque-propuesta-consolidada .tabla-resumen-servicios-total tbody tr:nth-child(even) td {
+      background: #e4ecf6;
+    }
+    .bloque-propuesta-consolidada .tabla-resumen-servicios-total tbody tr td:first-child {
+      font-weight: 600;
+      color: var(--primary-dark);
+      border-left: 4px solid var(--primary);
+      padding-left: 0.8rem;
+    }
+    .bloque-propuesta-consolidada .tabla-resumen-servicios-total tbody tr .col-tiempo-resumen {
+      font-weight: 700;
+      color: var(--primary-dark);
+      font-size: 0.93rem;
+    }
+    .tabla-resumen-servicios-total .col-tiempo-resumen { white-space: nowrap; width: 12rem; }
+    .bloque-propuesta-consolidada .tabla-forma-pago-propuesta {
+      width: 100%;
+      max-width: 34rem;
+      border-collapse: collapse;
+      font-size: 0.9rem;
+      border: 1px solid rgba(0, 33, 113, 0.12);
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 2px 8px rgba(0, 33, 113, 0.08);
+      margin: 1rem 0 0 0;
+    }
+    .bloque-propuesta-consolidada .tabla-forma-pago-propuesta th,
+    .bloque-propuesta-consolidada .tabla-forma-pago-propuesta td {
+      padding: 0.65rem 0.95rem;
+      text-align: left;
+      vertical-align: top;
+      color: var(--text);
+      border-bottom: 1px solid rgba(0, 33, 113, 0.1);
+    }
+    .bloque-propuesta-consolidada .tabla-forma-pago-propuesta th {
+      background: linear-gradient(180deg, #f0f5fb 0%, #e2ecf6 100%);
+      font-weight: 700;
+      color: var(--primary-dark);
+      width: 42%;
+    }
+    .bloque-propuesta-consolidada .tabla-forma-pago-propuesta td {
+      background: #fff;
+    }
+    .bloque-propuesta-consolidada .tabla-forma-pago-propuesta tr:last-child th,
+    .bloque-propuesta-consolidada .tabla-forma-pago-propuesta tr:last-child td {
+      border-bottom: none;
+    }
+    .bloque-propuesta-consolidada .lista-forma-pago-propuesta {
+      margin: 0;
+      padding-left: 1.2rem;
+      line-height: 1.55;
+    }
+    .bloque-propuesta-consolidada .lista-forma-pago-propuesta li {
+      margin-bottom: 0.35rem;
+    }
+    .bloque-propuesta-consolidada .lista-forma-pago-propuesta li:last-child {
+      margin-bottom: 0;
+    }
+    .titulo-resumen-servicios {
+      margin: 1.5rem 0 0.35rem 0;
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--primary-dark);
+    }
+    .apartado-propuesta-consolidada-final .bloque-consideraciones-generales {
+      margin-top: 1.15rem;
+      margin-bottom: 0;
+    }
+    .bloque-consideraciones-generales {
+      margin-top: 1.35rem;
+      padding: 1.25rem 1.35rem 1.3rem;
+      background: linear-gradient(180deg, #f4f6f9 0%, #fafbfc 55%);
+      border-radius: 10px;
+    }
+    .titulo-consideraciones-generales {
+      margin: 0 0 0.8rem 0;
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--primary-dark);
+      padding-bottom: 0.45rem;
+      border-bottom: 2px solid rgba(13, 71, 161, 0.18);
+      letter-spacing: 0.015em;
+    }
+    .lista-consideraciones-generales {
+      margin: 0;
+      padding-left: 1.35rem;
+      line-height: 1.58;
+      font-size: 0.9rem;
+      color: var(--text);
+      text-align: justify;
+    }
+    .lista-consideraciones-generales li { margin-bottom: 0.7rem; }
+    .lista-consideraciones-generales li:last-child { margin-bottom: 0; }
+    .casos-uso-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+    .caso-uso-card {
+      background: linear-gradient(to bottom, #fafafa, #f5f5f5);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.25rem;
+    }
+    .caso-uso-card h4 {
+      color: var(--primary-dark);
+      margin-bottom: 0.5rem;
+      font-size: 1rem;
+    }
+    .caso-uso-card p { margin: 0; font-size: 0.9rem; line-height: 1.5; color: var(--text); }
+    .punto3-migracion-imagenes {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.25rem;
+      margin-top: 1.25rem;
+      justify-content: center;
+      align-items: flex-start;
+    }
+    .punto3-migracion-imagenes .punto3-img {
+      max-width: 100%;
+      width: 480px;
+      height: auto;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+      object-fit: contain;
+    }
+    .punto4-fila-texto-imagen {
+      display: flex;
+      gap: 1.25rem;
+      align-items: flex-start;
+      margin-bottom: 1rem;
+    }
+    .punto4-fila-texto-imagen .punto4-texto { flex: 1; min-width: 0; margin: 0; }
+    .punto4-fila-texto-imagen .punto4-img-wrap { flex-shrink: 0; }
+    .punto4-fila-texto-imagen .punto4-img-wrap img {
+      max-width: 320px; max-height: 200px; width: auto; height: auto;
+      object-fit: contain; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    }
+    .subpunto-img:not([src]),
+    .subpunto-img[src=""],
+    .punto2-img:not([src]),
+    .punto2-img[src=""] {
+      background: linear-gradient(135deg, #e0e0e0 0%, #eeeeee 100%);
+      min-height: 180px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--text-muted);
+      font-size: 0.875rem;
+    }
+    /* Carta comercial: ancho lo da el contenedor (misma caja que .plan-word-docx-wrap) */
+    .plan-word-docx .plan-carta-comercial {
+      margin: 2cm 0 1.25rem 0;
+      padding: 0 0.91cm 0 1cm;
+      font-family: "Times New Roman", Times, serif;
+      font-size: 12pt;
+      line-height: 1.45;
+      color: #00000a;
+    }
+    .plan-word-docx .plan-carta-comercial p {
+      margin: 0 0 0.4em 0;
+      text-indent: 0;
+    }
+    .plan-word-docx .plan-carta-comercial .plan-carta-fecha {
+      text-align: right;
+      margin-top: 3.5cm;
+      margin-bottom: 3cm;
+    }
+    .plan-word-docx .plan-carta-comercial .plan-carta-left {
+      text-align: left;
+    }
+    .plan-word-docx .plan-carta-comercial .plan-carta-body {
+      text-align: justify;
+      hyphens: none;
+      -webkit-hyphens: none;
+      -ms-hyphens: none;
+      margin-bottom: 0.85em;
+    }
+    .plan-word-docx .plan-carta-comercial .plan-carta-sep {
+      text-align: center;
+      margin: 0.35em 0 0.65em 0;
+      font-weight: normal;
+      line-height: 1.2;
+    }
+    .plan-word-docx .plan-carta-comercial .plan-carta-saludo {
+      text-align: left;
+      margin-top: 0.85em;
+      margin-bottom: 0.5em;
+    }
+    .plan-word-docx .plan-carta-comercial .plan-carta-cierre {
+      text-align: left;
+      margin-top: 0.85em;
+    }
+    .plan-word-docx .plan-carta-comercial .plan-carta-firma-sp {
+      height: 3.2em;
+      margin: 0.15em 0 0.35em 0;
+    }
+    .plan-word-docx .plan-carta-comercial .plan-carta-nombre {
+      text-align: left;
+      margin-top: 3cm;
+      margin-bottom: 0.35em;
+    }
+    .plan-word-docx .plan-carta-comercial .plan-carta-contact {
+      text-align: left;
+      font-size: 12pt;
+      line-height: 1.4;
+      margin-bottom: 0.15em;
+    }
+    .plan-word-docx .plan-carta-comercial .plan-carta-contact a {
+      color: inherit;
+      text-decoration: underline;
+    }
+    /* Portada plan Word: título y versión a la derecha; ilustración abajo a la izquierda.
+       Mismo respiro horizontal que CONFIDENCIALIDAD (1cm / 0.91cm). */
+    .plan-word-docx .plan-portada {
+      display: flex;
+      flex-direction: column;
+      margin: 0 0 1.75rem 0;
+      min-height: auto;
+      padding-top: 7cm;
+      padding-left: 1cm;
+      padding-right: 0.91cm;
+      box-sizing: border-box;
+    }
+    /* Párrafos Word tras la carta (huecos antes de CONFIDENCIALIDAD): mismo margen horizontal */
+    .plan-word-docx > .plan-carta-comercial ~ p.western {
+      margin-left: 1cm !important;
+      margin-right: 0.91cm !important;
+    }
+    /* padding-top solo en pantalla: en PDF/print ese 6cm quedaba activo (cascada tras print.css)
+       y empujaba CONFIDENCIALIDAD ~6cm hacia abajo en la página 3. */
+    .plan-word-docx > p.western.plan-titulo-confidencialidad {
+      margin-top: 0 !important;
+      box-sizing: border-box !important;
+    }
+    @media screen {
+      .plan-word-docx > p.western.plan-titulo-confidencialidad {
+        padding-top: 6cm !important;
+      }
+    }
+    .plan-word-docx .plan-portada-derecha {
+      text-align: right;
+      width: 100%;
+    }
+    .plan-word-docx .plan-portada-titulo {
+      margin: 0;
+      margin-left: auto;
+      max-width: 22em;
+      font-family: Verdana, "Segoe UI", Geneva, sans-serif;
+      font-size: 18pt;
+      font-weight: 700;
+      font-style: italic;
+      color: #17365d;
+      line-height: 1.35;
+      letter-spacing: 0.02em;
+      text-transform: uppercase;
+    }
+    .plan-word-docx .plan-portada-version {
+      margin: 2.75rem 0 0 0;
+      text-align: right;
+      font-family: Verdana, "Segoe UI", Geneva, sans-serif;
+      font-size: 14pt;
+      font-weight: 700;
+      font-style: normal;
+      color: #00000a;
+      line-height: 1.3;
+    }
+    .plan-word-docx .plan-portada-imagen {
+      margin-top: 6cm;
+      align-self: flex-start;
+    }
+    .plan-word-docx .plan-portada-imagen img {
+      display: block;
+      max-width: 100%;
+      height: auto;
+      width: 296px;
+    }
+    @media (max-width: 600px) {
+      .plan-word-docx .plan-portada {
+        margin-left: 0;
+        margin-right: 0;
+        padding-top: 2rem;
+      }
+      .plan-word-docx .plan-portada-imagen {
+        margin-top: 1.75rem !important;
+      }
+      .plan-word-docx .plan-carta-comercial {
+        margin-top: 1.25rem !important;
+      }
+      .plan-word-docx .plan-portada-titulo {
+        font-size: clamp(0.95rem, 4.2vw, 18pt);
+        max-width: none;
+      }
+      .plan-word-docx .plan-portada-imagen img {
+        width: 100%;
+        max-width: 296px;
+      }
+      .punto2-item { flex-direction: column; align-items: center; }
+      .punto2-item .punto2-img { width: 100%; max-width: 320px; height: auto; }
+      .punto2-ibforms-fila { flex-direction: column; align-items: center; }
+      .punto2-ibforms-fila .punto2-img { width: 100%; max-width: 364px; height: auto; }
+      .punto3-migracion-imagenes { flex-direction: column; align-items: center; }
+      .punto3-migracion-imagenes .punto3-img { width: 100%; max-width: 320px; }
+      .punto4-fila-texto-imagen { flex-direction: column; align-items: center; }
+      .punto4-fila-texto-imagen .punto4-img-wrap img { max-width: 100%; }
+      .plan-word-docx-wrap {
+        margin-top: 2rem !important;
+        margin-left: 1cm !important;
+        margin-right: 0 !important;
+        max-width: calc(100% - 1cm - 1.5rem - 1cm) !important;
+        padding: 0 !important;
+      }
+      .comercial-header { flex-direction: column; align-items: flex-start; }
+      .ilustracion-container object, .ilustracion-container iframe { height: 280px; }
+      .subpunto-item { flex-direction: column; align-items: center; }
+      .subpunto-img { width: 100%; max-width: 320px; height: auto; min-height: 180px; }
+      .subpunto-item.img-ampliada .subpunto-img { width: 100%; max-width: 380px; height: auto; min-height: 200px; }
+      .subpunto-consultas-fila { flex-direction: column; align-items: center; }
+      .subpunto-consultas-fila .subpunto-img { width: 100%; max-width: 364px; height: auto; }
+      .subpunto-mantenimiento-fila { flex-direction: column; align-items: center; margin-left: 0; margin-right: 0; width: 100%; }
+      .subpunto-mantenimiento-fila .subpunto-img { width: 100%; max-width: 400px; height: auto; }
+    }
+  </style>
+</head>
+<body>
+  <div class="app-wrap">
+    <header class="flow-header comercial-header" role="banner" aria-label="Encabezado"></header>
+
+        <section class="plan-word-docx-wrap" aria-label="Plan 2026 v1, páginas 1 a 3">
+    <style type="text/css">
+
+    /* Caja horizontal del bloque Word (páginas 1–3) */
+    .plan-word-docx-wrap {
+      margin-top: 4cm;
+      margin-bottom: 1.5rem;
+      margin-left: 1cm;
+      margin-right: 0;
+      max-width: calc(100% - 1cm - 1.5rem - 1cm);
+      padding: 0;
+      box-sizing: border-box;
+    }
+    .plan-word-docx-wrap .plan-word-docx {
+      max-width: none;
+      margin: 0;
+      background: #fff;
+    }
+    .plan-word-docx-wrap .plan-word-docx img {
+      max-width: 100%;
+      height: auto;
+    }
+    /* No forzar margin 0 en todos los <p>: rompe los márgenes inline de Word en
+       CONFIDENCIALIDAD / CONFLICTO DE INTERESES (deben alinearse con el ancho del bloque Word).
+       La carta ya define márgenes en el <head> (.plan-carta-comercial p). */
+    .plan-word-docx-wrap .plan-word-docx .plan-portada p {
+      margin-left: 0 !important;
+      margin-right: 0 !important;
+    }
+
+		/* @page: definido en print.css (copia para PDF); el @page de Word desactivado aquí */
+		.plan-word-docx p { color: #00000a; line-height: 115%; text-align: justify; orphans: 0; widows: 0; margin-bottom: 0.25cm; direction: ltr; background: transparent; hyphens: none; -webkit-hyphens: none; -ms-hyphens: none }
+		.plan-word-docx p.western { font-family: "Times New Roman", serif; font-size: 10pt; so-language: en-US; font-weight: normal }
+		.plan-word-docx p.cjk { font-family: "Times New Roman"; font-size: 10pt; so-language: zh-CN; font-weight: normal }
+		.plan-word-docx p.ctl { font-family: "Times New Roman"; font-size: 10pt; so-language: ar-SA }
+		.plan-word-docx a:link { color: #000080; so-language: zxx; text-decoration: underline }
+		.plan-word-docx a:visited { color: #800080; so-language: zxx; text-decoration: underline }
+		.plan-word-docx a.sdfootnotesym-western { font-size: 10pt }
+		.plan-word-docx a.sdfootnotesym-cjk { font-size: 10pt }
+	
+  
+    </style>
+    <div class="plan-word-docx">
+<section class="plan-portada" aria-label="Portada">
+  <div class="plan-portada-derecha">
+    <h1 class="plan-portada-titulo">PROPUESTA DE PORTAL DIGITAL BBVA:  PRODUCTOS ESTRUCTURADOS DE PERSONAS</h1>
+    <p class="plan-portada-version">Versión 1.0</p>
+  </div>
+  <div class="plan-portada-imagen">
+    <img src="banescovzla_plan_2026_v1_html_95f8590f.jpg" alt="Ilustración de dispositivos digitales" width="296" height="218" loading="lazy" decoding="async">
+  </div>
+</section>
+<div class="plan-carta-comercial">
+<p class="plan-carta-fecha">Caracas, 15 de abril de 2026</p>
+<p class="plan-carta-left">Señores</p>
+<p class="plan-carta-left">MARIA EUGENIA DOMINGUEZ SANTANA</p>
+<p class="plan-carta-left">Atención. Sra. Domínguez Santana</p>
+<p class="plan-carta-left">Ciudad.-</p>
+<p class="plan-carta-saludo">Estimados Sres.:</p>
+<p class="plan-carta-body">De acuerdo con conversaciones sostenidas con usted recientemente, nos es grato hacerle entrega formal de nuestra propuesta de “<strong>PROPUESTA DE PORTAL DIGITAL BBVA:  PRODUCTOS ESTRUCTURADOS DE PERSONAS</strong>”.</p>
+<p class="plan-carta-sep" aria-hidden="true">|</p>
+<p class="plan-carta-body">Entendiendo la importancia que este proyecto tiene para ustedes, ratificamos nuestro mayor compromiso y dedicación para el logro de las metas planteadas.</p>
+<p class="plan-carta-body">Buscando a través del éxito de este proyecto, convertirnos en un verdadero socio tecnológico y estratégico, que los acompañe en el empuje y crecimiento que BBVA Seguros ha demostrado mantener durante estos últimos años en el sector.</p>
+<p class="plan-carta-cierre">En espera de su respuesta, se despide,</p>
+<p class="plan-carta-left">Atentamente,</p>
+<div class="plan-carta-firma-sp" aria-hidden="true"></div>
+<p class="plan-carta-left plan-carta-nombre"><strong>César Rodríguez</strong></p>
+<p class="plan-carta-left plan-carta-contact">Cel: +58 (412) 237.33.20</p>
+<p class="plan-carta-left plan-carta-contact">e-mail: <a href="mailto:ibsoftdev.info@gmail.com">ibsoftdev.info@gmail.com</a></p>
+</div>
+<p lang="es-VE" class="western" align="left" style="line-height: 100%; orphans: 2; widows: 2; margin-left: 0.05cm; margin-right: 0.91cm; margin-bottom: 0.21cm">
+<br/>
+<br/>
+
+</p>
+<p lang="es-VE" class="western" align="center" style="line-height: 0.85cm; orphans: 2; widows: 2; margin-left: 1cm; margin-right: 0.91cm; margin-top: 0.42cm; margin-bottom: 0cm">
+<br/>
+
+</p>
+<p lang="es-VE" class="western" align="center" style="line-height: 0.85cm; orphans: 2; widows: 2; margin-left: 1cm; margin-right: 0.91cm; margin-top: 0.42cm; margin-bottom: 0cm">
+<br/>
+
+</p>
+<p lang="en-US" class="western plan-titulo-confidencialidad" align="center" style="line-height: 0.85cm; orphans: 2; widows: 2; margin-left: 1cm; margin-right: 0.91cm; margin-top: 0; margin-bottom: 0cm">
+<font size="5" style="font-size: 20pt"><span lang="es-VE"><b>CONFIDENCIALIDAD</b></span></font></p>
+<p lang="en-US" class="western" style="line-height: 0.64cm; orphans: 2; widows: 2; margin-left: 1cm; margin-right: 0.91cm; margin-top: 0.42cm; margin-bottom: 0cm">
+<font size="3" style="font-size: 12pt"><span lang="es-VE"><span style="font-weight: normal">El
+material presentado en esta propuesta representa información
+exclusiva de los productos y metodología de IBSOFT DEVELOPMENT, C.A.
+ Esta propuesta incluye información que no debe ser ofrecida ni
+divulgada fuera de BBVA Seguros  y no deberá ser duplicada,
+utilizada o revelada para ningún propósito que no sea el de evaluar
+esta propuesta.  En caso de que el contrato sea otorgado a IBSOFT
+DEVELOPMENT, C.A. por los resultados de esta propuesta, o en conjunto
+con la información suministrada,  BBVA Seguros tendrá el derecho
+de duplicar, utilizar y divulgar la información provista en el
+resultado del contrato.  Esta restricción no limita a BBVA Seguros el derecho de uso de información ofrecida en esta propuesta
+si es obtenida por otras fuentes sin restricción de
+confidencialidad.</span></span></font></p>
+<p lang="es-VE" class="western" align="center" style="line-height: 0.85cm; orphans: 2; widows: 2; margin-right: 0.91cm; margin-top: 0.42cm; margin-bottom: 0cm">
+<br/>
+
+</p>
+<p lang="en-US" class="western" align="center" style="line-height: 0.85cm; orphans: 2; widows: 2; margin-left: 1cm; margin-right: 0.91cm; margin-top: 0.42cm; margin-bottom: 0cm">
+<font size="5" style="font-size: 20pt"><span lang="es-VE"><b>CONFLICTO
+DE INTERESES</b></span></font></p>
+<p lang="en-US" class="western" style="line-height: 0.64cm; orphans: 2; widows: 2; margin-left: 1cm; margin-right: 0.91cm; margin-top: 0.42cm; margin-bottom: 0cm">
+<font size="3" style="font-size: 12pt"><span lang="es-VE"><span style="font-weight: normal">IBSOFT
+DEVELOPMENT, C.A. certifica que ningún empleado que ejerza alguna
+función o responsabilidad en la revisión o aprobación de este
+documento o en la ejecución de este proyecto, adquirirá
+voluntariamente, antes de finalizar el proyecto, algún interés
+personal, directo o indirecto, en este contrato o propuesta.</span></span></font></p>
+<p lang="es-VE" class="western" align="right" style="font-weight: normal; line-height: 100%; orphans: 2; widows: 2; margin-bottom: 0cm">
+<br/>
+
+</p>
+<p lang="es-VE" class="western" style="font-weight: normal; line-height: 100%; orphans: 2; widows: 2; margin-bottom: 0cm">
+<br/>
+
+</p>
+<p lang="es-VE" class="western" style="line-height: 100%; orphans: 2; widows: 2; margin-bottom: 0cm">
+<br/>
+
+</p>
+<p lang="es-VE" class="western" style="line-height: 100%; orphans: 2; widows: 2; margin-bottom: 0cm">
+<br/>
+
+</p>
+<p lang="es-VE" class="western" style="line-height: 100%; orphans: 2; widows: 2; margin-bottom: 0cm">
+<br/>
+
+</p>
+<p lang="es-VE" class="western" style="line-height: 100%; orphans: 2; widows: 2; margin-bottom: 0cm">
+<br/>
+
+</p>
+<p lang="es-VE" class="western" style="line-height: 100%; orphans: 2; widows: 2; margin-bottom: 0cm">
+<br/>
+
+</p>
+<p lang="es-VE" class="western" style="line-height: 100%; orphans: 2; widows: 2; margin-bottom: 0cm">
+<br/>
+
+</p>
+<p lang="es-VE" class="western" style="line-height: 100%; orphans: 2; widows: 2; margin-bottom: 0cm">
+<br/>
+
+</p>
+<p lang="es-VE" class="western" style="line-height: 100%; orphans: 2; widows: 2; margin-bottom: 0cm">
+<br/>
+
+</p>
+<p lang="es-VE" class="western" style="line-height: 100%; orphans: 2; widows: 2; margin-bottom: 0cm">
+<br/>
+
+</p>
+<p lang="es-VE" class="western" style="line-height: 100%; orphans: 2; widows: 2; margin-bottom: 0cm">
+<br/>
+
+</p>
+
+  
+    </div>
+    </section>
+
+    <div class="card card-plan-estrategico-2026">
+      <div class="card-header">Cotizacion y Emision de Productos Estructurados de Personas</div>
+      <div class="card-body">
+        <p style="margin: 0 0 1rem 0; color: var(--text); text-align: justify;">En este documento se describen los <strong>servicios a desarrollar</strong> para el canal digital de BBVA Seguros. El eje principal es la <strong>cotización y emisión de productos estructurados de personas</strong>: flujos que abarcan la selección de producto y plan, la captura de datos del contratante, el cálculo de coberturas y prima, las validaciones, la documentación y los beneficiarios, hasta la <strong>póliza emitida</strong>. La secuencia de referencia corresponde a <strong>Accidentes Personales</strong>; el mismo patrón de pantallas —en cotización y en emisión— se replica en <strong>Gastos Funerarios</strong> (masivo e inclusivo) y <strong>Vida Individual</strong>, ajustando formularios, reglas y resultados a cada ramo.</p>
+        <p style="margin: 0 0 1rem 0; color: var(--text); text-align: justify;">El alcance se completa con la <strong>notificación de pago</strong>, integrada al cierre del ciclo de emisión; la <strong>consulta integral de cotizaciones</strong>; la <strong>afiliación y autogestión de usuario</strong>; y la <strong>consulta integral de usuarios</strong>. Así se cubre la operación comercial y el soporte posterior sobre cotizaciones, pólizas y usuarios del canal.</p>
+        <p style="margin: 0 0 1rem 0; color: var(--text); text-align: justify;">La propuesta parte de <strong>conceptos funcionales</strong> y de <strong>activos técnicos ya validados</strong> por el <strong>área Comercial de BBVA Seguros</strong>.</p>
+
+        <div class="punto-clave punto-clave-expandido texto-justificado punto-servicios-alcance-pdf">
+          <span class="numero">1</span>
+          <div class="texto">
+            <h4>Servicios a Desarrollar</h4>
+            <p style="margin: 0 0 1rem 0; color: var(--text); text-align: justify;">A continuación se listan los módulos incluidos en el alcance de <strong>Servicios a Desarrollar</strong>.</p>
+            <div class="servicios-bso-embed">
+    <section id="pantalla-1" class="screen" aria-labelledby="titulo-1">
+      <div class="screen-header">
+        <span class="screen-num" aria-hidden="true">1</span>
+        <h2 id="titulo-1">Cotizacion y Emision de Productos de Personas</h2>
+        <p class="screen-desc">La secuencia que se documenta a continuación ilustra la cotización y emisión de <strong>Accidentes Personales</strong> (selección de producto y plan, datos del contratante y resumen previo a guardar o emitir). <strong>La misma secuencia de pantallas</strong> —en cotización y en emisión— se aplicará a <strong>Gastos Funerarios Masivo</strong>, <strong>Gastos Funerarios Inclusivo</strong> y <strong>Vida Individual</strong>, ajustando formularios, validaciones y resultados según las particularidades de cada producto en la <strong>captura de datos</strong>, el <strong>cálculo de coberturas</strong> y el <strong>fraccionamiento</strong> de la prima.</p>
+      </div>
+      <h3 class="servicios-subtitulo-presentacion">Secuencia de pantallas de Cotizacion</h3>
+      <div class="consulta-propuesta-partes">
+        <section class="consulta-propuesta-parte" aria-labelledby="cot-ap-paso-0-titulo">
+          <h5 id="cot-ap-paso-0-titulo" class="consulta-propuesta-parte-titulo">Paso 0 - Selección de producto y plan</h5>
+          <figure class="figure-screen">
+            <img src="assets-propuesta/cotizacion-ap-paso-0-seleccion-producto.png" width="968" height="727" alt="Cotización AP paso 0: solicitud de producto, selección de accidentes personales y planes">
+          </figure>
+        </section>
+        <section class="consulta-propuesta-parte" aria-labelledby="cot-ap-paso-1-titulo">
+          <h5 id="cot-ap-paso-1-titulo" class="consulta-propuesta-parte-titulo">Paso 1 - Datos del contratante</h5>
+          <figure class="figure-screen">
+            <img src="assets-propuesta/cotizacion-ap-paso-1-datos-contratante.png" width="972" height="844" alt="Cotización AP paso 1: formulario de datos del contratante">
+          </figure>
+        </section>
+        <section class="consulta-propuesta-parte" aria-labelledby="cot-ap-paso-2-titulo">
+          <h5 id="cot-ap-paso-2-titulo" class="consulta-propuesta-parte-titulo">Paso 2 - Resumen de cotización</h5>
+          <div class="figure-stack">
+            <figure class="figure-screen">
+              <img src="assets-propuesta/cotizacion-ap-paso-2-resumen-1.png" width="884" height="621" alt="Cotización AP paso 2: resumen del contratante y frecuencia de pago">
+            </figure>
+            <figure class="figure-screen">
+              <img src="assets-propuesta/cotizacion-ap-paso-2-resumen-2.png" width="886" height="616" alt="Cotización AP paso 2: planes para ti y acción guardar o emitir">
+            </figure>
+          </div>
+        </section>
+        <h3 class="servicios-subtitulo-presentacion servicios-subtitulo-propuesta">Secuencia de pantallas de Emisión</h3>
+        <section class="consulta-propuesta-parte" aria-labelledby="emision-ap-paso-1-titulo">
+          <h5 id="emision-ap-paso-1-titulo" class="consulta-propuesta-parte-titulo">Paso 1: Declaración jurada</h5>
+          <div class="figure-stack">
+            <figure class="figure-screen">
+              <img src="assets-propuesta/cotizacion-ap-emision-paso-1-documentos.png" width="900" height="515" alt="Emisión AP paso 1: carga de documentos para la emisión de la póliza">
+            </figure>
+            <figure class="figure-screen">
+              <img src="assets-propuesta/cotizacion-ap-emision-paso-1-declaracion-jurada.png" width="851" height="473" alt="Emisión AP paso 1: declaraciones juradas y confirmación">
+            </figure>
+          </div>
+        </section>
+        <section class="consulta-propuesta-parte" aria-labelledby="emision-ap-paso-2-titulo">
+          <h5 id="emision-ap-paso-2-titulo" class="consulta-propuesta-parte-titulo">Paso 2: Beneficiarios</h5>
+          <figure class="figure-screen">
+            <img src="assets-propuesta/cotizacion-ap-emision-paso-2-beneficiarios.png" width="885" height="746" alt="Emisión AP paso 2: registro de datos del beneficiario y porcentaje de participación">
+          </figure>
+        </section>
+        <section class="consulta-propuesta-parte" aria-labelledby="emision-ap-paso-3-titulo">
+          <h5 id="emision-ap-paso-3-titulo" class="consulta-propuesta-parte-titulo">Paso 3: Resumen</h5>
+          <div class="figure-stack">
+            <figure class="figure-screen">
+              <img src="assets-propuesta/cotizacion-ap-emision-paso-3-resumen-1.png" width="884" height="691" alt="Emisión AP paso 3: resumen de emisión con declaraciones y documentos">
+            </figure>
+            <figure class="figure-screen">
+              <img src="assets-propuesta/cotizacion-ap-emision-paso-3-resumen-2.png" width="887" height="313" alt="Emisión AP paso 3: resumen del beneficiario y acciones de confirmación">
+            </figure>
+          </div>
+        </section>
+        <section class="consulta-propuesta-parte" aria-labelledby="emision-ap-paso-4-titulo">
+          <h5 id="emision-ap-paso-4-titulo" class="consulta-propuesta-parte-titulo">Paso 4: Póliza emitida</h5>
+          <div class="figure-stack">
+            <figure class="figure-screen">
+              <img src="assets-propuesta/cotizacion-ap-emision-paso-4-poliza-1.png" width="887" height="620" alt="Emisión AP paso 4: póliza emitida, datos de póliza y primas">
+            </figure>
+            <figure class="figure-screen">
+              <img src="assets-propuesta/cotizacion-ap-emision-paso-4-poliza-2.png" width="886" height="507" alt="Emisión AP paso 4: planes contratados y coberturas incluidas">
+            </figure>
+          </div>
+        </section>
+      </div>
+    </section>
+
+    <section id="pantalla-2" class="screen" aria-labelledby="titulo-2">
+      <div class="screen-header">
+        <span class="screen-num" aria-hidden="true">2</span>
+        <h2 id="titulo-2">Notificacion de Pago</h2>
+        <p class="screen-desc">Flujo de pagos con selección de pólizas pendientes y elección de método de pago antes del procesamiento de la transacción.</p>
+      </div>
+      <h3 class="servicios-subtitulo-presentacion">Secuencia de pantallas de Pagos</h3>
+      <div class="consulta-propuesta-partes">
+        <section class="consulta-propuesta-parte" aria-labelledby="pagos-paso-1-titulo">
+          <h5 id="pagos-paso-1-titulo" class="consulta-propuesta-parte-titulo">Método de Pago</h5>
+          <p style="margin: 0 0 0.65rem 0; color: var(--text); font-size: 0.88rem; line-height: 1.45; text-align: justify;">En el flujo integrado de emisión, esta pantalla puede presentarse en secuencia directa, de inmediato al concluir <strong>Paso 4: Póliza emitida</strong>, de modo que el usuario continúe con la elección del método de pago sin salir del contexto de la operación.</p>
+          <figure class="figure-screen">
+            <img src="assets-propuesta/pagos-paso-2-metodo-pago.png" width="1024" height="768" alt="Pagos: método de pago y resumen de monto a pagar">
+          </figure>
+        </section>
+        <section class="consulta-propuesta-parte" aria-labelledby="pagos-paso-2-titulo">
+          <h5 id="pagos-paso-2-titulo" class="consulta-propuesta-parte-titulo">Selección de Pólizas a Pagar</h5>
+          <p style="margin: 0 0 0.65rem 0; color: var(--text); font-size: 0.88rem; line-height: 1.45; text-align: justify;">Si la <strong>notificación de pago</strong> no puede completarse en ese momento, el usuario podrá <strong>recuperar la póliza</strong> desde la <strong>consulta correspondiente</strong> y <strong>reanudar el pago</strong> de la misma, sin necesidad de reiniciar el trámite desde cero.</p>
+          <figure class="figure-screen">
+            <img src="assets-propuesta/pagos-paso-1-seleccion-polizas.png" width="1024" height="864" alt="Pagos: selección de pólizas pendientes para continuar con el pago">
+          </figure>
+        </section>
+      </div>
+    </section>
+
+    <section id="pantalla-3" class="screen" aria-labelledby="titulo-3">
+      <div class="screen-header">
+        <span class="screen-num" aria-hidden="true">3</span>
+        <h2 id="titulo-3">Consulta Integral de Cotizaciones</h2>
+        <p class="screen-desc">Pantalla de consulta integral de cotizaciones para productos de personas, con filtros por período, producto, estatus y número de cotización, más listado de resultados.</p>
+      </div>
+      <h3 class="servicios-subtitulo-presentacion">Secuencia de pantallas de Consulta Integral de Cotizaciones</h3>
+      <div class="consulta-propuesta-partes">
+        <section class="consulta-propuesta-parte" aria-labelledby="cotizaciones-consulta-titulo">
+          <h5 id="cotizaciones-consulta-titulo" class="consulta-propuesta-parte-titulo">Consulta Integral de Cotizaciones</h5>
+          <figure class="figure-screen">
+            <img src="assets-propuesta/cotizaciones-consulta-integral.png" width="1024" height="692" alt="Consulta integral de cotizaciones: filtros y listado de cotizaciones de personas">
+          </figure>
+        </section>
+      </div>
+    </section>
+
+    <section id="pantalla-4" class="screen" aria-labelledby="titulo-4">
+      <div class="screen-header">
+        <span class="screen-num" aria-hidden="true">4</span>
+        <h2 id="titulo-4">Afiliación y Autogestion de usuario</h2>
+        <p class="screen-desc">Alcance funcional asociado al ciclo de registro, autenticación, recuperación y administración de datos del usuario y subusuarios.</p>
+      </div>
+      <div class="consulta-propuesta-partes">
+        <section class="consulta-propuesta-parte" aria-label="Afiliación y Autogestion de usuario">
+          <ul class="ciclo-desarrollo">
+            <li>
+              <div class="consulta-propuesta-parte-titulo" style="margin-bottom: 0.35rem;">Registro y Autenticacion de Usuario (SignUp/Signin)</div>
+              <div class="figure-stack" style="margin-top: 0.75rem;">
+                <figure class="figure-screen">
+                  <img src="assets-propuesta/signup-pantalla-registro.png" width="1000" height="700" alt="Pantalla de Signup: creación de usuario con correo, clave y aceptación de políticas">
+                </figure>
+                <figure class="figure-screen">
+                  <img src="assets-propuesta/signin-pantalla-login.png" width="1024" height="703" alt="Pantalla de SignIn: inicio de sesión con usuario y contraseña">
+                </figure>
+              </div>
+            </li>
+            <li>
+              <div class="consulta-propuesta-parte-titulo" style="margin-bottom: 0.35rem;">Olvido de Clave</div>
+              <div class="figure-row" style="margin-top: 0.75rem;">
+                <figure class="figure-screen">
+                  <img src="assets-propuesta/olvido-clave-correo.png" width="592" height="573" alt="Olvido de clave: solicitud de correo electrónico para restablecer la contraseña">
+                </figure>
+                <figure class="figure-screen">
+                  <img src="assets-propuesta/olvido-clave-preguntas-seguridad.png" width="526" height="673" alt="Olvido de clave: preguntas de seguridad para verificar la identidad del usuario">
+                </figure>
+              </div>
+            </li>
+            <li>
+              <div class="consulta-propuesta-parte-titulo" style="margin-bottom: 0.35rem;">Consola de Administracion de sub.Usuarios</div>
+              <p style="margin: 0 0 0.65rem 0; color: var(--text); font-size: 0.88rem; line-height: 1.45; text-align: justify;">Cada <strong>aliado comercial</strong> puede administrar a los <strong>usuarios internos</strong> de su propia estructura: altas, permisos y baja lógica según las reglas del canal. Esos colaboradores acceden al <strong>portal digital</strong> con <strong>credenciales de autenticación propias</strong>, distintas de las del usuario principal. Las operaciones que ejecuten quedan reflejadas en el <strong>core ALEA</strong> bajo el <strong>mismo código de canal</strong> vinculado al usuario titular, de forma que la trazabilidad y la contabilización por canal se mantengan coherentes entre titular y subusuarios.</p>
+              <div class="figure-stack" style="margin-top: 0.75rem;">
+                <figure class="figure-screen">
+                  <img src="assets-propuesta/consola-subusuarios-administracion.png" width="1024" height="467" alt="Consola de administración de subusuarios: criterios de búsqueda y listado de usuarios">
+                </figure>
+              </div>
+            </li>
+            <li>
+              <div class="consulta-propuesta-parte-titulo" style="margin-bottom: 0.35rem;">Perfil de Usuario</div>
+              <ul class="perfil-usuario-capturas" style="margin: 0.35rem 0 0 0; padding-left: 0; list-style: none;">
+                <li style="margin-bottom: 1.35rem;">
+                  <div class="consulta-propuesta-parte-titulo" style="margin-bottom: 0.35rem;">Cambio de Clave</div>
+                  <div class="figure-stack" style="margin-top: 0.75rem;">
+                    <figure class="figure-screen">
+                      <img src="assets-propuesta/perfil-cambio-clave.png" width="573" height="658" alt="Perfil de usuario: cambio de clave con clave actual, nueva clave y confirmación">
+                    </figure>
+                  </div>
+                </li>
+                <li style="margin-bottom: 1.35rem;">
+                  <div class="consulta-propuesta-parte-titulo" style="margin-bottom: 0.35rem;">Preguntas de Seguridad</div>
+                  <div class="figure-stack" style="margin-top: 0.75rem;">
+                    <figure class="figure-screen">
+                      <img src="assets-propuesta/perfil-preguntas-seguridad.png" width="523" height="774" alt="Perfil de usuario: configurar preguntas de seguridad con tres preguntas y respuestas">
+                    </figure>
+                  </div>
+                </li>
+                <li>
+                  <div class="consulta-propuesta-parte-titulo" style="margin-bottom: 0.35rem;">Actualizacion de Datos</div>
+                  <div class="figure-stack" style="margin-top: 0.75rem;">
+                    <figure class="figure-screen">
+                      <img src="assets-propuesta/perfil-actualizacion-datos.png" width="533" height="659" alt="Perfil de usuario: actualización de nombre, apellido y teléfono">
+                    </figure>
+                  </div>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </section>
+      </div>
+    </section>
+
+    <section id="pantalla-5" class="screen" aria-labelledby="titulo-5">
+      <div class="screen-header">
+        <span class="screen-num" aria-hidden="true">5</span>
+        <h2 id="titulo-5">Consulta Integral de Usuarios</h2>
+        <p class="screen-desc">Módulo dirigido a los <strong>administradores del portal digital</strong>, que concentran la <strong>gestión operativa de usuarios</strong> del canal: <strong>creación y edición</strong> de registros, <strong>reinicio de clave</strong>, <strong>activación y suspensión</strong> de cuentas, <strong>asignación de opciones</strong> (menús, permisos o parámetros habilitados según el modelo de seguridad) y demás acciones de soporte al ciclo de vida del usuario. La interfaz combina <strong>criterios de búsqueda</strong> y <strong>listado de resultados</strong> para localizar perfiles y aplicar los cambios de forma <strong>ordenada y trazable</strong>, conforme a las políticas del canal.</p>
+      </div>
+      <h3 class="servicios-subtitulo-presentacion">Secuencia de pantallas de Consulta Integral de Usuarios</h3>
+      <div class="consulta-propuesta-partes">
+        <section class="consulta-propuesta-parte" aria-labelledby="consulta-integral-usuarios-titulo">
+          <h5 id="consulta-integral-usuarios-titulo" class="consulta-propuesta-parte-titulo">Consulta Integral de Usuarios</h5>
+          <figure class="figure-screen">
+            <img src="assets-propuesta/consola-subusuarios-administracion.png" width="1024" height="467" alt="Consulta integral de usuarios: criterios de búsqueda y listado de usuarios">
+          </figure>
+        </section>
+      </div>
+    </section>
+            </div>
+          </div>
+        </div>
+
+        <div class="punto-clave punto-clave-expandido texto-justificado punto-servicios-alcance-pdf">
+          <span class="numero">2</span>
+          <div class="texto">
+            <h4>Arquitectura de despliegue</h4>
+            <div class="despliegue-arquitectura-logica">
+              <p class="despliegue-arquitectura-intro">
+              El tránsito hacia producción no es solo «subir el WAR»: requiere alinear negocio y catálogo de productos, infraestructura (aplicación y base de datos), acceso público (dominio, cifrado, ruteo) y integraciones con terceros u otras aplicaciones internas (correo, SMS, notificaciones).
+              </p>
+              <p class="despliegue-arquitectura-intro">
+              El <strong>repositorio Git</strong> concentra las fuentes a partir de las cuales se construyen los <strong>artefactos desplegables</strong> (p. ej. WAR) instalados en el servidor de aplicaciones, y desplegados en la plataforma <strong>Spring Boot</strong>, que aporta, para aplicaciones empresariales, <strong>autoconfiguración</strong> y arranque homogéneo; integración con el ecosistema <strong>Spring</strong> (seguridad, acceso a base de datos en forma segura y simplificada, APIs REST, mensajería e integraciones); empaquetado como <strong>WAR</strong> en contenedor de servlets o como <strong>JAR</strong> ejecutable según el estándar adoptado; <strong>configuración externalizada</strong> por entorno; y <strong>observabilidad</strong> mediante salud y métricas (p. ej. Actuator), lo que favorece operación, diagnóstico y continuidad en producción.
+              </p>
+              <figure class="despliegue-arquitectura-figure">
+              <svg viewBox="0 0 1620 520" xmlns="http://www.w3.org/2000/svg" style="max-width:100%;height:auto" role="img" aria-label="Arquitectura lógica con flujo principal, repositorio Git para artefactos y integraciones salientes">
+              <defs>
+              <linearGradient id="arqClient" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#44c5f8"/><stop offset="1" stop-color="#5b6df2"/></linearGradient>
+              <linearGradient id="arqApp" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#3fd09a"/><stop offset="1" stop-color="#10989a"/></linearGradient>
+              <linearGradient id="arqGit" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#fdba74"/><stop offset="1" stop-color="#ea580c"/></linearGradient>
+              <marker id="arqArrow" markerWidth="10" markerHeight="10" refX="9" refY="5" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="#94a3b8"/></marker>
+              </defs>
+
+              <rect x="12" y="14" width="1596" height="492" rx="22" fill="#f8fafc" stroke="#e2e8f0" stroke-width="2"/>
+
+              <rect x="52" y="78" width="152" height="130" rx="20" fill="url(#arqClient)"/>
+              <text x="128" y="140" text-anchor="middle" fill="#ffffff" font-size="20" font-weight="700" font-family="Segoe UI,system-ui,sans-serif">Cliente</text>
+              <text x="128" y="176" text-anchor="middle" fill="rgba(255,255,255,0.9)" font-size="14.5" font-family="Segoe UI,system-ui,sans-serif">Navegador</text>
+
+              <line x1="220" y1="143" x2="292" y2="143" stroke="#94a3b8" stroke-width="6" marker-end="url(#arqArrow)"/>
+
+              <rect x="314" y="66" width="188" height="154" rx="20" fill="#ffffff" stroke="#cbd5e1" stroke-width="5"/>
+              <text x="408" y="120" text-anchor="middle" fill="#0f172a" font-size="16.5" font-weight="700" font-family="Segoe UI,system-ui,sans-serif">Internet</text>
+              <text x="408" y="158" text-anchor="middle" fill="#64748b" font-size="12.5" font-family="Segoe UI,system-ui,sans-serif">DNS · TLS</text>
+              <text x="408" y="188" text-anchor="middle" fill="#64748b" font-size="12.5" font-family="Segoe UI,system-ui,sans-serif">Proxy / LB</text>
+
+              <line x1="514" y1="143" x2="588" y2="143" stroke="#94a3b8" stroke-width="6" marker-end="url(#arqArrow)"/>
+
+              <rect x="602" y="58" width="248" height="170" rx="24" fill="url(#arqApp)"/>
+              <text x="726" y="118" text-anchor="middle" fill="#ffffff" font-size="15.5" font-weight="700" font-family="Segoe UI,system-ui,sans-serif">Spring Boot WAR</text>
+              <text x="726" y="156" text-anchor="middle" fill="rgba(255,255,255,0.92)" font-size="10.5" font-family="Segoe UI,system-ui,sans-serif">API + React estatico</text>
+              <text x="726" y="188" text-anchor="middle" fill="rgba(255,255,255,0.9)" font-size="10.5" font-family="Segoe UI,system-ui,sans-serif">Formas configurables</text>
+
+              <line x1="726" y1="248" x2="726" y2="228" stroke="#94a3b8" stroke-width="4" stroke-dasharray="7 6" marker-end="url(#arqArrow)"/>
+              <rect x="606" y="248" width="240" height="96" rx="18" fill="url(#arqGit)" stroke="#c2410c" stroke-width="4"/>
+              <text x="726" y="282" text-anchor="middle" fill="#ffffff" font-size="17" font-weight="700" font-family="Segoe UI,system-ui,sans-serif">Git</text>
+              <text x="726" y="306" text-anchor="middle" fill="rgba(255,255,255,0.95)" font-size="10.5" font-family="Segoe UI,system-ui,sans-serif">Repositorio de fuentes</text>
+              <text x="726" y="328" text-anchor="middle" fill="rgba(255,255,255,0.92)" font-size="10" font-family="Segoe UI,system-ui,sans-serif">Build → artefactos desplegables</text>
+
+              <line x1="866" y1="143" x2="926" y2="143" stroke="#94a3b8" stroke-width="6" marker-end="url(#arqArrow)"/>
+
+              <rect x="938" y="86" width="146" height="122" rx="18" fill="#e0e7ff" stroke="#6366f1" stroke-width="5"/>
+              <text x="1011" y="143" text-anchor="middle" fill="#3730a3" font-size="14" font-weight="700" font-family="Segoe UI,system-ui,sans-serif">Base de</text>
+              <text x="1011" y="176" text-anchor="middle" fill="#3730a3" font-size="14" font-weight="700" font-family="Segoe UI,system-ui,sans-serif">datos</text>
+
+              <rect x="1340" y="86" width="180" height="108" rx="18" fill="#fdf2f8" stroke="#db2777" stroke-width="5"/>
+              <text x="1430" y="148" text-anchor="middle" fill="#831843" font-size="14" font-weight="700" font-family="Segoe UI,system-ui,sans-serif">SMTP/MailRelay</text>
+
+              <rect x="1340" y="210" width="180" height="108" rx="18" fill="#fdf2f8" stroke="#db2777" stroke-width="5"/>
+              <text x="1430" y="272" text-anchor="middle" fill="#831843" font-size="20" font-weight="700" font-family="Segoe UI,system-ui,sans-serif">SMS</text>
+
+              <rect x="1340" y="334" width="180" height="108" rx="18" fill="#eef2ff" stroke="#4f46e5" stroke-width="5"/>
+              <text x="1430" y="396" text-anchor="middle" fill="#3730a3" font-size="20" font-weight="700" font-family="Segoe UI,system-ui,sans-serif">Otras APIs</text>
+
+              <line x1="850" y1="143" x2="980" y2="143" stroke="#94a3b8" stroke-width="5" stroke-dasharray="8 7"/>
+              <line x1="980" y1="143" x2="980" y2="120" stroke="#94a3b8" stroke-width="5" stroke-dasharray="8 7"/>
+              <line x1="980" y1="120" x2="1328" y2="120" stroke="#94a3b8" stroke-width="5" stroke-dasharray="8 7" marker-end="url(#arqArrow)"/>
+              <line x1="980" y1="143" x2="980" y2="250" stroke="#94a3b8" stroke-width="5" stroke-dasharray="8 7"/>
+              <line x1="980" y1="250" x2="1328" y2="250" stroke="#94a3b8" stroke-width="5" stroke-dasharray="8 7" marker-end="url(#arqArrow)"/>
+              <line x1="980" y1="250" x2="980" y2="380" stroke="#94a3b8" stroke-width="5" stroke-dasharray="8 7"/>
+              <line x1="980" y1="380" x2="1328" y2="380" stroke="#94a3b8" stroke-width="5" stroke-dasharray="8 7" marker-end="url(#arqArrow)"/>
+              </svg>
+              <figcaption class="despliegue-arquitectura-caption">Figura complementaria: flujo principal con integraciones salientes incorporadas al mismo esquema.</figcaption>
+              </figure>
+              <div class="despliegue-arquitectura-servidores">
+                <p class="despliegue-arquitectura-servidores-lead">A nivel de infraestructura, el despliegue requiere como mínimo los siguientes <strong>componentes</strong>:</p>
+                <ul class="despliegue-arquitectura-servidores-list">
+                  <li>
+                    <strong>Servidor de aplicaciones.</strong> Ejecuta el runtime del backend (por ejemplo Spring Boot en WAR), expone la API y sirve los activos estáticos del front (React), incluida la capa de formas configurables representada en el diagrama.
+                    <ul class="despliegue-arquitectura-servidores-sub">
+                      <li><strong>Sistema Operativo:</strong> Linux</li>
+                      <li><strong>Procesadores:</strong> 4</li>
+                      <li><strong>Java Virtual Machine:</strong> JDK 21 o superior</li>
+                      <li><strong>Memoria:</strong> 16 GB</li>
+                      <li><strong>Espacio en Disco:</strong> 200 GB</li>
+                    </ul>
+                  </li>
+                  <li><strong>Servidor CloudFront.</strong> Capa de <strong>borde</strong> frente a Internet que <strong>recibe las peticiones dirigidas al dominio público</strong> del servicio; cumple rol de <strong>servidor web</strong>, gestiona la <strong>terminación TLS</strong> y el <strong>ciclo de vida de los certificados</strong> (emisión, renovación y políticas del dominio) y actúa como <strong>proxy inverso</strong> hacia el <strong>servidor de aplicaciones</strong>, enrutando las peticiones de la aplicación y, según la configuración, optimizando la entrega de <strong>contenido estático</strong> (CDN). En el esquema se alinea con el tramo público (p. ej. Internet / proxy) previo al runtime. <strong>Nota:</strong> se debe validar con el proveedor de infraestructura si CloudFront será provisto como un servicio administrado o si será necesario aprovisionar un <strong>servidor web</strong> dedicado para su configuración y operación.</li>
+                  <li><strong>Servidor de base de datos Relacional.</strong> Concentra la persistencia transaccional: datos operativos, parametrizaciones y el resto de entidades según el modelo físico; solo la capa de aplicación se conecta a él, sin exposición directa desde Internet.</li>
+                  <li><strong>Servicio Git.</strong> Repositorio central de <strong>control de versiones</strong> para el código fuente (backend, front y artefactos de configuración versionados en el mismo flujo). Desde él parten los trabajos de <strong>integración continua</strong> que generan los <strong>artefactos desplegables</strong> (p. ej. WAR) instalados en el servidor de aplicaciones. Hay que definir la <strong>plataforma o instancia Git</strong> (autoalojada o gestionada), <strong>acceso seguro</strong> (credenciales, tokens o SSO según política), permisos por repositorio y criterios de <strong>ramas, revisiones y etiquetas</strong> alineados con el equipo y la operación.</li>
+                  <li><strong>Servicio de envío de correos SMTP/MailRelay.</strong> Salida de correo transaccional y notificaciones desde la aplicación hacia un <strong>MailRelay</strong> de la organización vía <strong>SMTP</strong> con transporte cifrado (TLS); la solución no opera como buzón de correo. Se debe contar con <strong>host, puerto, credenciales</strong> y políticas de remitente acordadas, y alinear el dominio emisor con las prácticas del correo saliente (p. ej. SPF, DKIM, DMARC) para asegurar entrega y trazabilidad.</li>
+                  <li><strong>Servicio de mensajería SMS.</strong> Integración con el <strong>proveedor o agregador SMS</strong> que defina la organización (API, gateway u otro mecanismo acordado) para envíos salientes: códigos de un solo uso, avisos transaccionales o recordatorios según el alcance funcional. Se requiere disponer de <strong>endpoint, credenciales, remitente o identificador</strong> autorizado y las reglas de uso (plantillas, horarios, límites). Conviene alinear el servicio con las <strong>políticas de consentimiento y normativa aplicable</strong> al envío masivo o transaccional por SMS.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="punto-clave punto-clave-expandido texto-justificado punto-servicios-alcance-pdf">
+          <span class="numero">3</span>
+          <div class="texto">
+            <h4>Secuencia de etapas (orden conceptual)</h4>
+            <div class="despliegue-secuencia-etapas">
+              <p class="despliegue-secuencia-intro">
+              No todas las tareas van en cadena estricta, pero conviene fijar un hilo: primero
+              <strong>qué</strong> se comercializa y bajo <strong>qué reglas técnicas</strong>, luego
+              <strong>dónde</strong> se ejecuta y con <strong>qué conecta</strong>, y por último
+              <strong>cómo se opera</strong> en el tiempo.
+              </p>
+              <div class="diagram-card despliegue-secuencia-steps">
+              <svg viewBox="0 0 1120 430" xmlns="http://www.w3.org/2000/svg" style="max-width:100%;height:auto" role="img" aria-label="Línea de tiempo de ocho etapas de despliegue">
+              <defs>
+              <linearGradient id="seqTlAxis" x1="0" y1="0" x2="1" y2="0">
+              <stop offset="0%" stop-color="#f59e0b"/>
+              <stop offset="35%" stop-color="#ef4444"/>
+              <stop offset="60%" stop-color="#84cc16"/>
+              <stop offset="100%" stop-color="#0f766e"/>
+              </linearGradient>
+              <marker id="seqTlArrow" markerWidth="9" markerHeight="9" refX="8" refY="4.5" orient="auto">
+              <path d="M0 0 L9 4.5 L0 9 z" fill="#94a3b8"/>
+              </marker>
+              </defs>
+              <rect x="8" y="8" width="1104" height="414" rx="18" fill="#f8fafc" stroke="#e2e8f0"/>
+              <line x1="70" y1="214" x2="1050" y2="214" stroke="url(#seqTlAxis)" stroke-width="6" stroke-linecap="round"/>
+              <g stroke="#94a3b8" stroke-width="2.5" fill="none" marker-end="url(#seqTlArrow)" opacity="0.9">
+              <line x1="128" y1="214" x2="241" y2="214"/>
+              <line x1="257" y1="214" x2="369" y2="214"/>
+              <line x1="385" y1="214" x2="498" y2="214"/>
+              <line x1="514" y1="214" x2="627" y2="214"/>
+              <line x1="642" y1="214" x2="755" y2="214"/>
+              <line x1="770" y1="214" x2="883" y2="214"/>
+              <line x1="898" y1="214" x2="1012" y2="214"/>
+              </g>
+              
+              <!-- 1 -->
+              <circle cx="120" cy="214" r="7" fill="#f59e0b"/>
+              <line x1="120" y1="214" x2="120" y2="156" stroke="#f59e0b" stroke-width="5" stroke-dasharray="6 6"/>
+              <circle cx="120" cy="108" r="42" fill="#fff" stroke="#f59e0b" stroke-width="8"/>
+              <text x="120" y="114" text-anchor="middle" fill="#92400e" font-size="19" font-weight="800" font-family="Segoe UI,system-ui,sans-serif">1</text>
+              <text x="120" y="48" text-anchor="middle" fill="#334155" font-size="13" font-weight="700" font-family="Segoe UI,system-ui,sans-serif">Portafolio</text>
+              
+              <!-- 2 -->
+              <circle cx="249" cy="214" r="7" fill="#fb923c"/>
+              <line x1="249" y1="214" x2="249" y2="272" stroke="#fb923c" stroke-width="5" stroke-dasharray="6 6"/>
+              <circle cx="249" cy="320" r="42" fill="#fff" stroke="#fb923c" stroke-width="8"/>
+              <text x="249" y="326" text-anchor="middle" fill="#9a3412" font-size="19" font-weight="800" font-family="Segoe UI,system-ui,sans-serif">2</text>
+              <text x="249" y="368" text-anchor="middle" fill="#334155" font-size="12" font-weight="700" font-family="Segoe UI,system-ui,sans-serif">Esquemas de</text>
+              <text x="249" y="386" text-anchor="middle" fill="#334155" font-size="12" font-weight="700" font-family="Segoe UI,system-ui,sans-serif">Datos</text>
+              
+              <!-- 3 -->
+              <circle cx="377" cy="214" r="7" fill="#f97316"/>
+              <line x1="377" y1="214" x2="377" y2="156" stroke="#f97316" stroke-width="5" stroke-dasharray="6 6"/>
+              <circle cx="377" cy="108" r="42" fill="#fff" stroke="#f97316" stroke-width="8"/>
+              <text x="377" y="114" text-anchor="middle" fill="#9a3412" font-size="19" font-weight="800" font-family="Segoe UI,system-ui,sans-serif">3</text>
+              <text x="377" y="48" text-anchor="middle" fill="#334155" font-size="11.5" font-weight="700" font-family="Segoe UI,system-ui,sans-serif">Config. JSON</text>
+              
+              <!-- 4 -->
+              <circle cx="506" cy="214" r="7" fill="#ef4444"/>
+              <line x1="506" y1="214" x2="506" y2="272" stroke="#ef4444" stroke-width="5" stroke-dasharray="6 6"/>
+              <circle cx="506" cy="320" r="42" fill="#fff" stroke="#ef4444" stroke-width="8"/>
+              <text x="506" y="326" text-anchor="middle" fill="#991b1b" font-size="19" font-weight="800" font-family="Segoe UI,system-ui,sans-serif">4</text>
+              <text x="506" y="378" text-anchor="middle" fill="#334155" font-size="13" font-weight="700" font-family="Segoe UI,system-ui,sans-serif">Entornos</text>
+              
+              <!-- 5 -->
+              <circle cx="635" cy="214" r="7" fill="#84cc16"/>
+              <line x1="635" y1="214" x2="635" y2="156" stroke="#84cc16" stroke-width="5" stroke-dasharray="6 6"/>
+              <circle cx="635" cy="108" r="42" fill="#fff" stroke="#84cc16" stroke-width="8"/>
+              <text x="635" y="114" text-anchor="middle" fill="#3f6212" font-size="19" font-weight="800" font-family="Segoe UI,system-ui,sans-serif">5</text>
+              <text x="635" y="48" text-anchor="middle" fill="#334155" font-size="12" font-weight="700" font-family="Segoe UI,system-ui,sans-serif">Correo / SMS</text>
+              
+              <!-- 6 -->
+              <circle cx="763" cy="214" r="7" fill="#22c55e"/>
+              <line x1="763" y1="214" x2="763" y2="272" stroke="#22c55e" stroke-width="5" stroke-dasharray="6 6"/>
+              <circle cx="763" cy="320" r="42" fill="#fff" stroke="#22c55e" stroke-width="8"/>
+              <text x="763" y="326" text-anchor="middle" fill="#166534" font-size="19" font-weight="800" font-family="Segoe UI,system-ui,sans-serif">6</text>
+              <text x="763" y="378" text-anchor="middle" fill="#334155" font-size="13" font-weight="700" font-family="Segoe UI,system-ui,sans-serif">Dominio TLS</text>
+              
+              <!-- 7 -->
+              <circle cx="891" cy="214" r="7" fill="#14b8a6"/>
+              <line x1="891" y1="214" x2="891" y2="156" stroke="#14b8a6" stroke-width="5" stroke-dasharray="6 6"/>
+              <circle cx="891" cy="108" r="42" fill="#fff" stroke="#14b8a6" stroke-width="8"/>
+              <text x="891" y="114" text-anchor="middle" fill="#115e59" font-size="19" font-weight="800" font-family="Segoe UI,system-ui,sans-serif">7</text>
+              <text x="891" y="48" text-anchor="middle" fill="#334155" font-size="13" font-weight="700" font-family="Segoe UI,system-ui,sans-serif">QA</text>
+              
+              <!-- 8 -->
+              <circle cx="1020" cy="214" r="7" fill="#2563eb"/>
+              <line x1="1020" y1="214" x2="1020" y2="272" stroke="#2563eb" stroke-width="5" stroke-dasharray="6 6"/>
+              <circle cx="1020" cy="320" r="42" fill="#fff" stroke="#2563eb" stroke-width="8"/>
+              <text x="1020" y="326" text-anchor="middle" fill="#1e3a8a" font-size="19" font-weight="800" font-family="Segoe UI,system-ui,sans-serif">8</text>
+              <text x="1020" y="378" text-anchor="middle" fill="#334155" font-size="13" font-weight="700" font-family="Segoe UI,system-ui,sans-serif">Go-live</text>
+              </svg>
+              <p class="diagram-caption">Línea de tiempo tipo infografía con hitos alternados arriba y abajo para facilitar lectura secuencial.</p>
+              <ol class="despliegue-secuencia-list">
+              <li><strong>Portafolio:</strong> fijar qué se ofrece en el canal y bajo qué reglas, alineado a las capacidades descritas en <strong>Cotización y emisión de productos de personas</strong> y en <strong>Notificación de pago</strong>. Incluye el catálogo de productos de personas (<strong>Accidentes Personales</strong> como referencia, y el mismo esquema aplicado a <strong>Gastos Funerarios</strong> masivo e inclusivo y <strong>Vida Individual</strong>), con sus planes, coberturas, criterios de <strong>captura de datos</strong>, <strong>cálculo de coberturas</strong>, <strong>fraccionamiento</strong> de prima y validaciones de cotización (selección de producto/plan, contratante, resumen y decisión de guardar o emitir). Para emisión, las reglas que sustentan declaración jurada y documentación, beneficiarios, resumen y <strong>póliza emitida</strong>. Para pagos, el portafolio operativo debe contemplar la <strong>notificación de pago</strong>: pólizas pendientes, <strong>método de pago</strong>, continuidad tras la emisión y la posibilidad de <strong>retomar el pago</strong> desde la consulta cuando no se complete en el acto.</li>
+              <li><strong>Esquemas de Datos:</strong> modelar e implementar en la <strong>base de datos relacional</strong> las estructuras de datos, catálogos, relaciones y persistencia que soporten reglas y tramitación de cotización y emisión. El modelo físico debe incluir asimismo las <strong>tablas</strong> necesarias para la <strong>gestión y administración de los usuarios</strong> con acceso al portal (identidades, roles, permisos, vínculos con el negocio y demás entidades que defina la operación del canal).</li>
+              <li><strong>Configuración JSON:</strong> preparar el modelo en JSON de formas configurables (proyectos, pantallas, validaciones) coherente con el <strong>portafolio</strong> y los esquemas de datos. Debe representar, además, el conjunto de <strong>reglas</strong> necesarias para describir las <strong>secuencias de pantallas de captura de datos</strong> de los <strong>procesos de negocio</strong> definidos en ese portafolio (flujos, pasos, transiciones y comportamiento de cada pantalla en el canal).</li>
+              <li><strong>Entornos:</strong> alistar <strong>DEV / QA / PROD</strong>, entendidos como <strong>servidores de aplicaciones</strong> cada uno interactuando con su <strong>instancia de base de datos</strong> correspondiente, con versiones, variables y controles de despliegue consistentes.</li>
+              <li><strong>Correo / SMS:</strong> configurar proveedores, plantillas y políticas de envío para notificaciones transaccionales.</li>
+              <li><strong>Dominio TLS:</strong> asegurar DNS, certificados y publicación HTTPS para el acceso externo protegido; estas características se configuran sobre el <strong>Servidor CloudFront</strong> (borde público del dominio).</li>
+              <li><strong>QA:</strong> ejecutar pruebas de calidad y validación funcional con usuarios de negocio antes de la salida.</li>
+              <li><strong>Go-live:</strong> pasar a producción con monitoreo, soporte inicial y plan de contingencia activo.</li>
+              </ol>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="punto-clave punto-clave-expandido texto-justificado punto-servicios-alcance-pdf">
+          <span class="numero">4</span>
+          <div class="texto">
+            <h4>Tabla de aristas: qué concretar en cada faceta</h4>
+            <div class="despliegue-tabla-aristas">
+              <p class="despliegue-tabla-aristas-intro">
+              Lista de comprobación para acuerdos entre negocio, arquitectura, infraestructura y operaciones.
+              Los ejemplos son ilustrativos, no prescriptivos.
+              </p>
+              <table class="despliegue-aristas-criteria">
+              <thead>
+              <tr>
+              <th>Faceta</th>
+              <th>Decisiones o entregables típicos</th>
+              </tr>
+              </thead>
+              <tbody>
+              <tr>
+              <td class="despliegue-aristas-dim">Productos a comercializar</td>
+              <td>Catálogo, coberturas, versionado; qué se cotiza y qué se emite; ciclos de vida del producto; criterios de aceptación comercial (SLA, horarios, exclusiones).</td>
+              </tr>
+              <tr>
+              <td class="despliegue-aristas-dim">Formas configurables</td>
+              <td>Proyectos <code>project_*.json</code> o equivalentes, alineados con <code>Project</code>/ibSuiteConf; carga de datos en kernel/entorno; coherencia entre entornos (dev, QA, prod) y trazabilidad de cambios.</td>
+              </tr>
+              <tr>
+              <td class="despliegue-aristas-dim">Servidor aplicativo</td>
+              <td>JDK, perfiles Spring (<code>application.yml</code>), <code>server.servlet.context-path</code>, recursos, JVM (memoria, GC), usuarios de sistema, despliegue del WAR, afinidad y escalado (réplicas, sticky sessions si aplica).</td>
+              </tr>
+              <tr>
+              <td class="despliegue-aristas-dim">Base de datos</td>
+              <td>Motor y versión, esquemas, usuarios mínimo privilegio, cifrado en tránsito (TLS hacia DB), copias, restauración, migraciones (Flyway/Liquibase u operativa manual acordada).</td>
+              </tr>
+              <tr>
+              <td class="despliegue-aristas-dim">Dominio y acceso público</td>
+              <td>Registro DNS (A/AAAA, CNAME), nombres de host acordados, certificados (p. ej. Let’s Encrypt o CA corporativa), cierre de HTTP claro, cabeceras de seguridad, límites de tasa (rate limiting) si aplica.</td>
+              </tr>
+              <tr>
+              <td class="despliegue-aristas-dim">Comunicación con otras apps</td>
+              <td>APIs o mensajería; autenticación (OAuth2, mTLS, API keys con rotación); contratos de notificación, idempotencia y reintentos; manejo de indisponibilidad de terceros.</td>
+              </tr>
+              <tr>
+              <td class="despliegue-aristas-dim">Correo electrónico</td>
+              <td>Relé SMTP, SPF/DKIM/DMARC en el dominio emisor, plantillas, remitente visible, almacenamiento mínimo de PII, colas o reenvío ante fallo.</td>
+              </tr>
+              <tr>
+              <td class="despliegue-aristas-dim">SMS (y canales móviles)</td>
+              <td>Proveedor contratado, reglas de opt-in, plantillas, costos y throttling, cumplimiento de normativas locales.</td>
+              </tr>
+              <tr>
+              <td class="despliegue-aristas-dim">Operación y cumplimiento</td>
+              <td>Registro y retención de logs, alertas, backups comprobados, runbooks, parches, gestión de secretos, roles de acceso y trazas de auditoría.</td>
+              </tr>
+              </tbody>
+              </table>
+              
+              <div class="despliegue-aristas-callout">
+              <strong>Nota de alcance.</strong> Este documento fija un marco común para el despliegue. Los detalles
+              puntuales (puertos, clústeres, proveedores) deben constar en hojas de arquitectura, diagramas C4 o
+              repositorio de operaciones, según el estándar de su organización.
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="punto-clave punto-clave-expandido texto-justificado punto-servicios-alcance-pdf">
+          <span class="numero">5</span>
+          <div class="texto">
+            <h4>Consideraciones de Desarrollo</h4>
+            <ul class="ciclo-desarrollo">
+              <li>Aplicaciones Frontend Desarrolladas en React</li>
+              <li>Backend soportado en contenedores SpringBoot</li>
+              <li>Modelo configurable basado en JSON</li>
+            </ul>
+          </div>
+        </div>
+
+        <section class="apartado-propuesta-consolidada-final" aria-label="Propuesta consolidada">
+            <div class="bloque-propuesta-consolidada propuesta-consolidada-pdf-una-pagina">
+            <p class="titulo-resumen-servicios">Propuesta consolidada</p>
+            <p class="intro-resumen-servicios">Síntesis de las estimaciones de <strong>tiempo</strong> por módulo según el <strong>alcance funcional (complemento)</strong>. La <strong>propuesta económica</strong> global no se desglosa por módulo en esta tabla; los costos se definen en cotización comercial según equipo, tarifas y alcance acordado.</p>
+            <table class="tabla-resumen-servicios-total" role="table" aria-label="Resumen tiempo total Servicios a Desarrollar">
+              <thead>
+                <tr>
+                  <th scope="col">Módulo</th>
+                  <th class="col-tiempo-resumen" scope="col">Tiempo estimado</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>1. Acceso al portal</td>
+                  <td class="col-tiempo-resumen">2 semanas</td>
+                </tr>
+              </tbody>
+              <tfoot class="resumen-propuesta-totales">
+                <tr>
+                  <th scope="row">Subtotal tiempo (módulos con cifra)</th>
+                  <td class="col-tiempo-resumen">2 semanas</td>
+                </tr>
+                <tr>
+                  <th scope="row">Total alcance estimado</th>
+                  <td class="col-tiempo-resumen">aprox. 10 semanas</td>
+                </tr>
+                <tr>
+                  <th scope="row">Total costo</th>
+                  <td class="col-tiempo-resumen">00.000,00 USD</td>
+                </tr>
+              </tfoot>
+            </table>
+            <div class="bloque-propuesta-forma-y-descuento">
+            <table class="tabla-forma-pago-propuesta" role="table" aria-label="Forma de pago">
+              <tbody>
+                <tr>
+                  <th scope="row">Forma de Pago</th>
+                  <td>
+                    <ul class="lista-forma-pago-propuesta">
+                      <li><strong>Inicial:</strong> 20%</li>
+                      <li><strong>2 pagos mensuales</strong> del 10% cada uno</li>
+                      <li><strong>Pago final:</strong> 50% según entregables</li>
+                    </ul>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+            </div>
+            </div>
+
+            <section class="bloque-consideraciones-generales" aria-label="Consideraciones generales">
+              <p class="titulo-consideraciones-generales">Consideraciones generales</p>
+              <ul class="lista-consideraciones-generales">
+                <li><strong>Los tiempos presentados son estimaciones aproximadas. Para poder establecer la línea de tiempo definitiva se debe contar con los documentos de especificación requeridos para cada funcionalidad.</strong></li>
+                <li><strong>El costo presentado en esta propuesta es cerrado, tomando en cuenta los siguientes aspectos:</strong>
+                  <ul style="margin: 0.4rem 0 0 1.25rem; padding-left: 1rem; list-style-type: disc;">
+                    <li>Los cambios de especificación una vez iniciado el ciclo de desarrollo pueden implicar el ajuste del costo de la funcionalidad que se desea modificar, lo cual será acordado por ambas partes.</li>
+                    <li>En caso de presentarse algún factor externo, como integración con plataformas de terceros desde el Portal BSO (Pasarela de Pagos, Gestor Documental, etc.) que no permitan la culminación del desarrollo de cualquiera de los módulos indicados y que se prolongue por más de 30 días continuos, entonces dicha funcionalidad se considerará entregada y se procederá a la facturación de la misma.</li>
+                  </ul>
+                </li>
+                <li>Para cada uno de los módulos indicados, se construirán las interfaces web de acuerdo con los ERF proporcionados por BBVA Seguros. También se construirán los programas en PL/SQL para llevar a cabo la integración con Rector, a partir de las especificaciones funcionales y técnicas proporcionadas por BBVA Seguros.</li>
+                <li>Una vez culminado el desarrollo de cada entregable, BBVA Seguros dispondrá de un período de 30 días continuos para realizar el proceso de certificación de esta funcionalidad. En caso de no reportar ningún incidente asociado a las especificaciones del documento ERF, se dará por entregado dicho entregable y se procederá a su facturación.</li>
+                <li>Esta propuesta solo considera la integración en los ambientes de desarrollo, calidad y producción de BBVA Seguros. Para integración en ambientes adicionales por causas no imputables a ibSoft Development, dichas horas adicionales serán facturadas a la misma tasa de las horas correspondientes a este presupuesto.</li>
+                <li>En caso de reinstalación de ambientes por causas no imputables a ibSoft Development, dichas horas adicionales serán facturadas a la misma tasa de las horas correspondientes a este presupuesto.</li>
+                <li>En caso de requerirse ciclos de pruebas adicionales por causas no imputables a ibSoft Development, dichas horas adicionales serán facturadas a la misma tasa de las horas correspondientes a este presupuesto.</li>
+                <li>Se extenderá una garantía de 30 días para corregir cualquier incidente, siempre y cuando el mismo corresponda a una falla en los programas asociados a la funcionalidad que presenta la falla y no sea derivado de:
+                  <ul style="margin: 0.4rem 0 0 1.25rem; padding-left: 1rem; list-style-type: disc;">
+                    <li>Mal funcionamiento de Rector.</li>
+                    <li>Fallas en la infraestructura donde se ejecutan las aplicaciones.</li>
+                    <li>Modificación en las reglas de negocio.</li>
+                    <li>Otros factores externos al componente desplegado.</li>
+                  </ul>
+                </li>
+                <li>No incluyen instalación ni puesta en marcha de Sistemas Operativos, Redes, Base de Datos, o elementos de Infraestructura.</li>
+                <li>No se requieren costos adicionales de licenciamiento de software, ya que el portal se ejecuta en una plataforma 100% open source: Linux, Java SpringBoot, React.</li>
+              </ul>
+            </section>
+        </section>
+
+      </div>
+    </div>
+
+  </div>
+</body>
+</html>
