@@ -668,6 +668,23 @@
     .despliegue-arquitectura-servidores-sub li:first-child {
       margin-top: 0;
     }
+    .despliegue-arquitectura-cloudfront-nota {
+      display: block;
+      margin: 0.55rem 0 0 0;
+      padding: 0.5rem 0.65rem 0.52rem 0.75rem;
+      border-left: 4px solid var(--primary-dark);
+      border-radius: 0 8px 8px 0;
+      background: linear-gradient(90deg, rgba(0, 33, 113, 0.1), rgba(248, 250, 252, 0.98));
+      box-shadow: inset 0 0 0 1px rgba(0, 33, 113, 0.06);
+      font-size: 0.87rem;
+      line-height: 1.5;
+      color: var(--text);
+    }
+    .despliegue-arquitectura-cloudfront-nota strong:first-of-type {
+      color: var(--primary-dark);
+      font-weight: 800;
+      letter-spacing: 0.02em;
+    }
 
     /* Secuencia de etapas (propuesta/despliegue-produccion.html) */
     .despliegue-secuencia-etapas {
@@ -725,77 +742,74 @@
       text-align: justify;
     }
     .despliegue-secuencia-list li { margin: 0.25rem 0; }
-
-    /* Tabla de aristas */
-    .despliegue-tabla-aristas {
-      margin: 0.65rem 0 0 0;
-      max-width: 100%;
-      box-sizing: border-box;
-    }
-    .despliegue-tabla-aristas-intro {
-      margin: 0 0 0.85rem 0;
+    .despliegue-secuencia-list .despliegue-secuencia-portafolio-lead {
+      margin: 0.35rem 0 0.45rem 0;
       padding: 0;
-      color: var(--text);
-      font-size: 0.9rem;
-      line-height: 1.52;
-      text-align: justify;
-    }
-    .despliegue-aristas-criteria {
-      width: 100%;
-      border-collapse: separate;
-      border-spacing: 0;
-      font-size: 0.88rem;
-      margin: 0.5rem 0 1rem;
-      border-radius: 12px;
-      overflow: hidden;
-      box-shadow: 0 4px 24px rgba(15, 23, 42, 0.08);
-      border: 1px solid #e2e8f0;
-    }
-    .despliegue-aristas-criteria th,
-    .despliegue-aristas-criteria td {
-      padding: 0.55rem 0.75rem;
-      text-align: left;
-      vertical-align: top;
-      border-bottom: 1px solid #e2e8f0;
-    }
-    .despliegue-aristas-criteria tr:last-child td { border-bottom: none; }
-    .despliegue-aristas-criteria thead th {
-      background: linear-gradient(180deg, #0c4a6e 0%, #075985 100%);
-      color: #f8fafc;
-      font-weight: 600;
-      font-size: 0.78rem;
-      text-transform: uppercase;
-      letter-spacing: 0.04em;
-      border-bottom: none;
-    }
-    .despliegue-aristas-criteria tbody tr:nth-child(even) { background: #f8fafc; }
-    .despliegue-aristas-criteria .despliegue-aristas-dim {
-      font-weight: 700;
-      color: #0369a1;
-      width: 26%;
-      border-left: 4px solid #0ea5e9;
-      background: linear-gradient(90deg, rgba(224, 242, 254, 0.6), transparent);
-    }
-    .despliegue-aristas-criteria code {
-      font-size: 0.84em;
-      background: #e0f2fe;
-      padding: 0.12em 0.35em;
-      border-radius: 4px;
-      color: #0c4a6e;
-    }
-    .despliegue-aristas-callout {
-      background: linear-gradient(135deg, #ecfeff 0%, #e0f2fe 100%);
-      border: 1px solid #bae6fd;
-      border-radius: 14px;
-      padding: 0.9rem 1rem;
-      margin: 1rem 0 0;
       font-size: 0.88rem;
       line-height: 1.5;
-      box-shadow: 0 2px 12px rgba(14, 165, 233, 0.12);
-      text-align: justify;
       color: var(--text);
+      text-align: justify;
     }
-    .despliegue-aristas-callout strong { color: #0369a1; }
+    .despliegue-secuencia-list .despliegue-secuencia-portafolio-sub {
+      margin: 0;
+      padding: 0 0 0 1.15rem;
+      list-style-type: disc;
+      font-size: 0.86rem;
+      line-height: 1.48;
+      color: var(--text);
+      text-align: justify;
+    }
+    .despliegue-secuencia-list .despliegue-secuencia-portafolio-sub li {
+      margin: 0.35rem 0 0 0;
+    }
+    .despliegue-secuencia-list .despliegue-secuencia-portafolio-sub li:first-child {
+      margin-top: 0;
+    }
+    .despliegue-secuencia-list .despliegue-secuencia-portafolio-repo-tipos {
+      margin: 0.35rem 0 0 0;
+      padding: 0 0 0 1.1rem;
+      list-style-type: circle;
+      font-size: 0.84rem;
+      line-height: 1.45;
+      color: var(--text);
+      text-align: left;
+    }
+    .despliegue-secuencia-list .despliegue-secuencia-portafolio-repo-tipos li {
+      margin: 0.22rem 0 0 0;
+    }
+    .despliegue-secuencia-list .despliegue-secuencia-portafolio-repo-tipos li:first-child {
+      margin-top: 0;
+    }
+    .despliegue-secuencia-list .despliegue-secuencia-entornos-sub {
+      margin: 0.35rem 0 0 0;
+      padding: 0 0 0 1.1rem;
+      list-style-type: disc;
+      font-size: 0.86rem;
+      line-height: 1.48;
+      color: var(--text);
+      text-align: justify;
+    }
+    .despliegue-secuencia-list .despliegue-secuencia-entornos-sub li {
+      margin: 0.25rem 0 0 0;
+    }
+    .despliegue-secuencia-list .despliegue-secuencia-entornos-sub li:first-child {
+      margin-top: 0;
+    }
+    .despliegue-secuencia-list .despliegue-secuencia-qa-sub {
+      margin: 0.35rem 0 0 0;
+      padding: 0 0 0 1.1rem;
+      list-style-type: disc;
+      font-size: 0.86rem;
+      line-height: 1.48;
+      color: var(--text);
+      text-align: justify;
+    }
+    .despliegue-secuencia-list .despliegue-secuencia-qa-sub li {
+      margin: 0.25rem 0 0 0;
+    }
+    .despliegue-secuencia-list .despliegue-secuencia-qa-sub li:first-child {
+      margin-top: 0;
+    }
 
     .servicios-bso-embed .consulta-propuesta-provisional-nota {
       margin: 0 0 0.65rem 0;
@@ -1735,7 +1749,7 @@ personal, directo o indirecto, en este contrato o propuesta.</span></span></font
                 <p class="despliegue-arquitectura-servidores-lead">A nivel de infraestructura, el despliegue requiere como mínimo los siguientes <strong>componentes</strong>:</p>
                 <ul class="despliegue-arquitectura-servidores-list">
                   <li>
-                    <strong>Servidor de aplicaciones.</strong> Ejecuta el runtime del backend (por ejemplo Spring Boot en WAR), expone la API y sirve los activos estáticos del front (React), incluida la capa de formas configurables representada en el diagrama.
+                    <strong>Servidor de aplicaciones.</strong> Ejecuta el runtime del backend (por ejemplo Spring Boot en WAR), expone la API y sirve los activos estáticos del front (React), incluida la capa de formas configurables representada en el diagrama. Se conecta al <strong>servidor de base de datos relacional</strong> para <strong>consultar la configuración</strong> que define las <strong>secuencias de pantallas</strong>, las <strong>listas de valores</strong>, los <strong>planes</strong> y las <strong>tarifas</strong>, y para <strong>consultar y persistir</strong> los datos de las entidades de negocio: <strong>usuarios</strong>, <strong>cotizaciones</strong>, <strong>pólizas</strong> y <strong>pagos</strong>.
                     <ul class="despliegue-arquitectura-servidores-sub">
                       <li><strong>Sistema Operativo:</strong> Linux</li>
                       <li><strong>Procesadores:</strong> 4</li>
@@ -1744,11 +1758,18 @@ personal, directo o indirecto, en este contrato o propuesta.</span></span></font
                       <li><strong>Espacio en Disco:</strong> 200 GB</li>
                     </ul>
                   </li>
-                  <li><strong>Servidor CloudFront.</strong> Capa de <strong>borde</strong> frente a Internet que <strong>recibe las peticiones dirigidas al dominio público</strong> del servicio; cumple rol de <strong>servidor web</strong>, gestiona la <strong>terminación TLS</strong> y el <strong>ciclo de vida de los certificados</strong> (emisión, renovación y políticas del dominio) y actúa como <strong>proxy inverso</strong> hacia el <strong>servidor de aplicaciones</strong>, enrutando las peticiones de la aplicación y, según la configuración, optimizando la entrega de <strong>contenido estático</strong> (CDN). En el esquema se alinea con el tramo público (p. ej. Internet / proxy) previo al runtime. <strong>Nota:</strong> se debe validar con el proveedor de infraestructura si CloudFront será provisto como un servicio administrado o si será necesario aprovisionar un <strong>servidor web</strong> dedicado para su configuración y operación.</li>
-                  <li><strong>Servidor de base de datos Relacional.</strong> Concentra la persistencia transaccional: datos operativos, parametrizaciones y el resto de entidades según el modelo físico; solo la capa de aplicación se conecta a él, sin exposición directa desde Internet.</li>
-                  <li><strong>Servicio Git.</strong> Repositorio central de <strong>control de versiones</strong> para el código fuente (backend, front y artefactos de configuración versionados en el mismo flujo). Desde él parten los trabajos de <strong>integración continua</strong> que generan los <strong>artefactos desplegables</strong> (p. ej. WAR) instalados en el servidor de aplicaciones. Hay que definir la <strong>plataforma o instancia Git</strong> (autoalojada o gestionada), <strong>acceso seguro</strong> (credenciales, tokens o SSO según política), permisos por repositorio y criterios de <strong>ramas, revisiones y etiquetas</strong> alineados con el equipo y la operación.</li>
-                  <li><strong>Servicio de envío de correos SMTP/MailRelay.</strong> Salida de correo transaccional y notificaciones desde la aplicación hacia un <strong>MailRelay</strong> de la organización vía <strong>SMTP</strong> con transporte cifrado (TLS); la solución no opera como buzón de correo. Se debe contar con <strong>host, puerto, credenciales</strong> y políticas de remitente acordadas, y alinear el dominio emisor con las prácticas del correo saliente (p. ej. SPF, DKIM, DMARC) para asegurar entrega y trazabilidad.</li>
-                  <li><strong>Servicio de mensajería SMS.</strong> Integración con el <strong>proveedor o agregador SMS</strong> que defina la organización (API, gateway u otro mecanismo acordado) para envíos salientes: códigos de un solo uso, avisos transaccionales o recordatorios según el alcance funcional. Se requiere disponer de <strong>endpoint, credenciales, remitente o identificador</strong> autorizado y las reglas de uso (plantillas, horarios, límites). Conviene alinear el servicio con las <strong>políticas de consentimiento y normativa aplicable</strong> al envío masivo o transaccional por SMS.</li>
+                  <li><strong>Servidor CloudFront.</strong> Capa de <strong>borde</strong> frente a Internet que <strong>recibe las peticiones dirigidas al dominio público</strong> del servicio; cumple rol de <strong>servidor web</strong>, gestiona la <strong>terminación TLS</strong> y el <strong>ciclo de vida de los certificados</strong> (emisión, renovación y políticas del dominio) y actúa como <strong>proxy inverso</strong> hacia el <strong>servidor de aplicaciones</strong>, enrutando las peticiones de la aplicación y, según la configuración, optimizando la entrega de <strong>contenido estático</strong> (CDN). En el esquema se alinea con el tramo público (p. ej. Internet / proxy) previo al runtime. <span class="despliegue-arquitectura-cloudfront-nota"><strong>Nota:</strong> se debe validar con el proveedor de infraestructura si CloudFront será provisto como un servicio administrado o si será necesario aprovisionar un <strong>servidor web</strong> dedicado para su configuración y operación (a modo de ejemplo, <strong>Nginx</strong> o <strong>Apache</strong>).</span></li>
+                  <li><strong>Servidor de base de datos Relacional.</strong> Concentra la persistencia transaccional: datos operativos, parametrizaciones y el resto de entidades según el modelo físico; solo la capa de aplicación se conecta a él, sin exposición directa desde Internet.
+                    <ul class="despliegue-arquitectura-servidores-sub">
+                      <li>Es compatible con cualquier <strong>motor de base de datos relacional</strong> que adopte la organización; a modo de ejemplo, <strong>Oracle</strong>, <strong>PostgreSQL</strong>, <strong>MariaDB</strong> u otros equivalentes, según política tecnológica y licenciamiento.</li>
+                      <li>La aplicación requiere uno o varios <strong>esquemas de datos</strong> donde se crean las <strong>tablas</strong> y los <strong>programas de persistencia</strong> (p. ej. PL/SQL en Oracle, o procedimientos y funciones almacenadas equivalentes en el motor elegido) que soportan el modelo de <strong>usuarios</strong>, <strong>cotizaciones</strong>, <strong>emisiones</strong> y <strong>pagos</strong>.</li>
+                      <li>Las estructuras para <strong>usuarios</strong>, <strong>roles</strong> y <strong>perfiles</strong> forman parte del núcleo de la aplicación. Las tablas vinculadas a <strong>cotizaciones</strong>, <strong>pólizas</strong> y <strong>pagos</strong> se definen en función de los <strong>datos que deba capturarse por producto</strong> ofrecido en el portal digital, y por tanto pueden variar según el ramo, el plan o la parametrización comercial acordada.</li>
+                    </ul>
+                  </li>
+                  <li><strong>Repositorio de documentos.</strong> Capacidad de almacenamiento <strong>ajena al motor relacional</strong>, destinada a conservar los <strong>ficheros que se cargan en pantalla</strong> durante el <strong>flujograma de cotización y emisión</strong> (identificaciones, soportes, declaraciones juradas, anexos u otros documentos que defina el portafolio). La aplicación orquesta <strong>subida, lectura y entrega</strong> vía API; en la base de datos solo se guardan <strong>referencias y metadatos</strong> vinculados a la cotización o a la póliza. Hay que fijar la <strong>solución concreta</strong> (p. ej. almacenamiento de objetos o equivalente aprobado por la organización), <strong>separación por entorno</strong> (DEV / QA / PROD), <strong>cuotas</strong>, políticas de <strong>retención y eliminación</strong>, y acceso <strong>únicamente desde el servidor de aplicaciones</strong>, sin exposición directa desde Internet.</li>
+                  <li><strong>Servicio Git.</strong> Repositorio central de <strong>control de versiones</strong> para el código fuente (backend, front y artefactos de configuración versionados en el mismo flujo). Desde él parten los trabajos de <strong>integración continua</strong> que generan los <strong>artefactos desplegables</strong> (p. ej. WAR) instalados en el servidor de aplicaciones. Hay que definir la <strong>plataforma o instancia Git</strong> (autoalojada o gestionada), <strong>acceso seguro</strong> (credenciales, tokens o SSO según política), permisos por repositorio y criterios de <strong>ramas, revisiones y etiquetas</strong> alineados con el equipo y la operación. A título de referencia, ejemplos habituales de plataforma son <strong>GitHub</strong>, <strong>GitLab</strong> y <strong>Bitbucket</strong> (u otras equivalentes según la política de la organización).</li>
+                  <li><strong>Servicio de envío de correos SMTP/MailRelay.</strong> Salida de correo transaccional y notificaciones desde la aplicación hacia un <strong>MailRelay</strong> de la organización vía <strong>SMTP</strong> con transporte cifrado (TLS); la solución no opera como buzón de correo. Se debe contar con <strong>host, puerto, credenciales</strong> y políticas de remitente acordadas, y alinear el dominio emisor con las prácticas del correo saliente (p. ej. SPF, DKIM, DMARC) para asegurar entrega y trazabilidad. La aplicación incorpora un <strong>servicio de cola de mensajes</strong> que mantiene el <strong>registro histórico</strong> de los correos enviados.</li>
+                  <li><strong>Servicio de mensajería SMS.</strong> Integración con el <strong>proveedor o agregador SMS</strong> que defina la organización (API, gateway u otro mecanismo acordado) para envíos salientes: códigos de un solo uso, avisos transaccionales o recordatorios según el alcance funcional. Se requiere disponer de <strong>endpoint, credenciales, remitente o identificador</strong> autorizado y las reglas de uso (plantillas, horarios, límites). Conviene alinear el servicio con las <strong>políticas de consentimiento y normativa aplicable</strong> al envío masivo o transaccional por SMS. La aplicación incorpora un <strong>servicio de cola de mensajes</strong> que mantiene el <strong>registro histórico</strong> de los mensajes SMS enviados.</li>
                 </ul>
               </div>
             </div>
@@ -1767,7 +1788,7 @@ personal, directo o indirecto, en este contrato o propuesta.</span></span></font
               <strong>cómo se opera</strong> en el tiempo.
               </p>
               <div class="diagram-card despliegue-secuencia-steps">
-              <svg viewBox="0 0 1120 430" xmlns="http://www.w3.org/2000/svg" style="max-width:100%;height:auto" role="img" aria-label="Línea de tiempo de ocho etapas de despliegue">
+              <svg viewBox="0 0 1120 430" xmlns="http://www.w3.org/2000/svg" style="max-width:100%;height:auto" role="img" aria-label="Línea de tiempo de siete etapas de despliegue">
               <defs>
               <linearGradient id="seqTlAxis" x1="0" y1="0" x2="1" y2="0">
               <stop offset="0%" stop-color="#f59e0b"/>
@@ -1782,81 +1803,100 @@ personal, directo o indirecto, en este contrato o propuesta.</span></span></font
               <rect x="8" y="8" width="1104" height="414" rx="18" fill="#f8fafc" stroke="#e2e8f0"/>
               <line x1="70" y1="214" x2="1050" y2="214" stroke="url(#seqTlAxis)" stroke-width="6" stroke-linecap="round"/>
               <g stroke="#94a3b8" stroke-width="2.5" fill="none" marker-end="url(#seqTlArrow)" opacity="0.9">
-              <line x1="128" y1="214" x2="241" y2="214"/>
-              <line x1="257" y1="214" x2="369" y2="214"/>
-              <line x1="385" y1="214" x2="498" y2="214"/>
-              <line x1="514" y1="214" x2="627" y2="214"/>
-              <line x1="642" y1="214" x2="755" y2="214"/>
-              <line x1="770" y1="214" x2="883" y2="214"/>
-              <line x1="898" y1="214" x2="1012" y2="214"/>
+              <line x1="128" y1="214" x2="262" y2="214"/>
+              <line x1="278" y1="214" x2="412" y2="214"/>
+              <line x1="428" y1="214" x2="562" y2="214"/>
+              <line x1="578" y1="214" x2="712" y2="214"/>
+              <line x1="728" y1="214" x2="862" y2="214"/>
+              <line x1="878" y1="214" x2="1012" y2="214"/>
               </g>
-              
-              <!-- 1 -->
+
+              <!-- 1 Portafolio -->
               <circle cx="120" cy="214" r="7" fill="#f59e0b"/>
               <line x1="120" y1="214" x2="120" y2="156" stroke="#f59e0b" stroke-width="5" stroke-dasharray="6 6"/>
               <circle cx="120" cy="108" r="42" fill="#fff" stroke="#f59e0b" stroke-width="8"/>
               <text x="120" y="114" text-anchor="middle" fill="#92400e" font-size="19" font-weight="800" font-family="Segoe UI,system-ui,sans-serif">1</text>
               <text x="120" y="48" text-anchor="middle" fill="#334155" font-size="13" font-weight="700" font-family="Segoe UI,system-ui,sans-serif">Portafolio</text>
-              
-              <!-- 2 -->
-              <circle cx="249" cy="214" r="7" fill="#fb923c"/>
-              <line x1="249" y1="214" x2="249" y2="272" stroke="#fb923c" stroke-width="5" stroke-dasharray="6 6"/>
-              <circle cx="249" cy="320" r="42" fill="#fff" stroke="#fb923c" stroke-width="8"/>
-              <text x="249" y="326" text-anchor="middle" fill="#9a3412" font-size="19" font-weight="800" font-family="Segoe UI,system-ui,sans-serif">2</text>
-              <text x="249" y="368" text-anchor="middle" fill="#334155" font-size="12" font-weight="700" font-family="Segoe UI,system-ui,sans-serif">Esquemas de</text>
-              <text x="249" y="386" text-anchor="middle" fill="#334155" font-size="12" font-weight="700" font-family="Segoe UI,system-ui,sans-serif">Datos</text>
-              
-              <!-- 3 -->
-              <circle cx="377" cy="214" r="7" fill="#f97316"/>
-              <line x1="377" y1="214" x2="377" y2="156" stroke="#f97316" stroke-width="5" stroke-dasharray="6 6"/>
-              <circle cx="377" cy="108" r="42" fill="#fff" stroke="#f97316" stroke-width="8"/>
-              <text x="377" y="114" text-anchor="middle" fill="#9a3412" font-size="19" font-weight="800" font-family="Segoe UI,system-ui,sans-serif">3</text>
-              <text x="377" y="48" text-anchor="middle" fill="#334155" font-size="11.5" font-weight="700" font-family="Segoe UI,system-ui,sans-serif">Config. JSON</text>
-              
-              <!-- 4 -->
-              <circle cx="506" cy="214" r="7" fill="#ef4444"/>
-              <line x1="506" y1="214" x2="506" y2="272" stroke="#ef4444" stroke-width="5" stroke-dasharray="6 6"/>
-              <circle cx="506" cy="320" r="42" fill="#fff" stroke="#ef4444" stroke-width="8"/>
-              <text x="506" y="326" text-anchor="middle" fill="#991b1b" font-size="19" font-weight="800" font-family="Segoe UI,system-ui,sans-serif">4</text>
-              <text x="506" y="378" text-anchor="middle" fill="#334155" font-size="13" font-weight="700" font-family="Segoe UI,system-ui,sans-serif">Entornos</text>
-              
-              <!-- 5 -->
-              <circle cx="635" cy="214" r="7" fill="#84cc16"/>
-              <line x1="635" y1="214" x2="635" y2="156" stroke="#84cc16" stroke-width="5" stroke-dasharray="6 6"/>
-              <circle cx="635" cy="108" r="42" fill="#fff" stroke="#84cc16" stroke-width="8"/>
-              <text x="635" y="114" text-anchor="middle" fill="#3f6212" font-size="19" font-weight="800" font-family="Segoe UI,system-ui,sans-serif">5</text>
-              <text x="635" y="48" text-anchor="middle" fill="#334155" font-size="12" font-weight="700" font-family="Segoe UI,system-ui,sans-serif">Correo / SMS</text>
-              
-              <!-- 6 -->
-              <circle cx="763" cy="214" r="7" fill="#22c55e"/>
-              <line x1="763" y1="214" x2="763" y2="272" stroke="#22c55e" stroke-width="5" stroke-dasharray="6 6"/>
-              <circle cx="763" cy="320" r="42" fill="#fff" stroke="#22c55e" stroke-width="8"/>
-              <text x="763" y="326" text-anchor="middle" fill="#166534" font-size="19" font-weight="800" font-family="Segoe UI,system-ui,sans-serif">6</text>
-              <text x="763" y="378" text-anchor="middle" fill="#334155" font-size="13" font-weight="700" font-family="Segoe UI,system-ui,sans-serif">Dominio TLS</text>
-              
-              <!-- 7 -->
-              <circle cx="891" cy="214" r="7" fill="#14b8a6"/>
-              <line x1="891" y1="214" x2="891" y2="156" stroke="#14b8a6" stroke-width="5" stroke-dasharray="6 6"/>
-              <circle cx="891" cy="108" r="42" fill="#fff" stroke="#14b8a6" stroke-width="8"/>
-              <text x="891" y="114" text-anchor="middle" fill="#115e59" font-size="19" font-weight="800" font-family="Segoe UI,system-ui,sans-serif">7</text>
-              <text x="891" y="48" text-anchor="middle" fill="#334155" font-size="13" font-weight="700" font-family="Segoe UI,system-ui,sans-serif">QA</text>
-              
-              <!-- 8 -->
+
+              <!-- 2 Esquemas de Datos -->
+              <circle cx="270" cy="214" r="7" fill="#fb923c"/>
+              <line x1="270" y1="214" x2="270" y2="272" stroke="#fb923c" stroke-width="5" stroke-dasharray="6 6"/>
+              <circle cx="270" cy="320" r="42" fill="#fff" stroke="#fb923c" stroke-width="8"/>
+              <text x="270" y="326" text-anchor="middle" fill="#9a3412" font-size="19" font-weight="800" font-family="Segoe UI,system-ui,sans-serif">2</text>
+              <text x="270" y="368" text-anchor="middle" fill="#334155" font-size="12" font-weight="700" font-family="Segoe UI,system-ui,sans-serif">Esquemas de</text>
+              <text x="270" y="386" text-anchor="middle" fill="#334155" font-size="12" font-weight="700" font-family="Segoe UI,system-ui,sans-serif">Datos</text>
+
+              <!-- 3 Config. JSON -->
+              <circle cx="420" cy="214" r="7" fill="#f97316"/>
+              <line x1="420" y1="214" x2="420" y2="156" stroke="#f97316" stroke-width="5" stroke-dasharray="6 6"/>
+              <circle cx="420" cy="108" r="42" fill="#fff" stroke="#f97316" stroke-width="8"/>
+              <text x="420" y="114" text-anchor="middle" fill="#9a3412" font-size="19" font-weight="800" font-family="Segoe UI,system-ui,sans-serif">3</text>
+              <text x="420" y="48" text-anchor="middle" fill="#334155" font-size="11.5" font-weight="700" font-family="Segoe UI,system-ui,sans-serif">Config. JSON</text>
+
+              <!-- 4 Entornos -->
+              <circle cx="570" cy="214" r="7" fill="#ef4444"/>
+              <line x1="570" y1="214" x2="570" y2="272" stroke="#ef4444" stroke-width="5" stroke-dasharray="6 6"/>
+              <circle cx="570" cy="320" r="42" fill="#fff" stroke="#ef4444" stroke-width="8"/>
+              <text x="570" y="326" text-anchor="middle" fill="#991b1b" font-size="19" font-weight="800" font-family="Segoe UI,system-ui,sans-serif">4</text>
+              <text x="570" y="378" text-anchor="middle" fill="#334155" font-size="13" font-weight="700" font-family="Segoe UI,system-ui,sans-serif">Entornos</text>
+
+              <!-- 5 QA -->
+              <circle cx="720" cy="214" r="7" fill="#14b8a6"/>
+              <line x1="720" y1="214" x2="720" y2="156" stroke="#14b8a6" stroke-width="5" stroke-dasharray="6 6"/>
+              <circle cx="720" cy="108" r="42" fill="#fff" stroke="#14b8a6" stroke-width="8"/>
+              <text x="720" y="114" text-anchor="middle" fill="#115e59" font-size="19" font-weight="800" font-family="Segoe UI,system-ui,sans-serif">5</text>
+              <text x="720" y="48" text-anchor="middle" fill="#334155" font-size="13" font-weight="700" font-family="Segoe UI,system-ui,sans-serif">QA</text>
+
+              <!-- 6 Despliegue CloudFront -->
+              <circle cx="870" cy="214" r="7" fill="#22c55e"/>
+              <line x1="870" y1="214" x2="870" y2="272" stroke="#22c55e" stroke-width="5" stroke-dasharray="6 6"/>
+              <circle cx="870" cy="320" r="42" fill="#fff" stroke="#22c55e" stroke-width="8"/>
+              <text x="870" y="326" text-anchor="middle" fill="#166534" font-size="19" font-weight="800" font-family="Segoe UI,system-ui,sans-serif">6</text>
+              <text x="870" y="368" text-anchor="middle" fill="#334155" font-size="11.5" font-weight="700" font-family="Segoe UI,system-ui,sans-serif">Despliegue</text>
+              <text x="870" y="386" text-anchor="middle" fill="#334155" font-size="11.5" font-weight="700" font-family="Segoe UI,system-ui,sans-serif">CloudFront</text>
+
+              <!-- 7 Go-live -->
               <circle cx="1020" cy="214" r="7" fill="#2563eb"/>
-              <line x1="1020" y1="214" x2="1020" y2="272" stroke="#2563eb" stroke-width="5" stroke-dasharray="6 6"/>
-              <circle cx="1020" cy="320" r="42" fill="#fff" stroke="#2563eb" stroke-width="8"/>
-              <text x="1020" y="326" text-anchor="middle" fill="#1e3a8a" font-size="19" font-weight="800" font-family="Segoe UI,system-ui,sans-serif">8</text>
-              <text x="1020" y="378" text-anchor="middle" fill="#334155" font-size="13" font-weight="700" font-family="Segoe UI,system-ui,sans-serif">Go-live</text>
+              <line x1="1020" y1="214" x2="1020" y2="156" stroke="#2563eb" stroke-width="5" stroke-dasharray="6 6"/>
+              <circle cx="1020" cy="108" r="42" fill="#fff" stroke="#2563eb" stroke-width="8"/>
+              <text x="1020" y="114" text-anchor="middle" fill="#1e3a8a" font-size="19" font-weight="800" font-family="Segoe UI,system-ui,sans-serif">7</text>
+              <text x="1020" y="48" text-anchor="middle" fill="#334155" font-size="13" font-weight="700" font-family="Segoe UI,system-ui,sans-serif">Go-live</text>
               </svg>
-              <p class="diagram-caption">Línea de tiempo tipo infografía con hitos alternados arriba y abajo para facilitar lectura secuencial.</p>
+              <p class="diagram-caption">Línea de tiempo tipo infografía con hitos alternados arriba y abajo para facilitar lectura secuencial (siete etapas).</p>
               <ol class="despliegue-secuencia-list">
-              <li><strong>Portafolio:</strong> fijar qué se ofrece en el canal y bajo qué reglas, alineado a las capacidades descritas en <strong>Cotización y emisión de productos de personas</strong> y en <strong>Notificación de pago</strong>. Incluye el catálogo de productos de personas (<strong>Accidentes Personales</strong> como referencia, y el mismo esquema aplicado a <strong>Gastos Funerarios</strong> masivo e inclusivo y <strong>Vida Individual</strong>), con sus planes, coberturas, criterios de <strong>captura de datos</strong>, <strong>cálculo de coberturas</strong>, <strong>fraccionamiento</strong> de prima y validaciones de cotización (selección de producto/plan, contratante, resumen y decisión de guardar o emitir). Para emisión, las reglas que sustentan declaración jurada y documentación, beneficiarios, resumen y <strong>póliza emitida</strong>. Para pagos, el portafolio operativo debe contemplar la <strong>notificación de pago</strong>: pólizas pendientes, <strong>método de pago</strong>, continuidad tras la emisión y la posibilidad de <strong>retomar el pago</strong> desde la consulta cuando no se complete en el acto.</li>
+              <li><strong>Portafolio:</strong>
+                <p class="despliegue-secuencia-portafolio-lead">Define de forma explícita <strong>qué</strong> se ofrece en el canal y <strong>bajo qué reglas</strong> debe operarse, alineado a las capacidades descritas en <strong>Cotización y emisión de productos de personas</strong> y en <strong>Notificación de pago</strong>.</p>
+                <ul class="despliegue-secuencia-portafolio-sub">
+                  <li><strong>Catálogo y reglas de producto:</strong> los productos contemplados son <strong>Gastos Funerarios</strong> (inclusivo o masivo), <strong>Vida Individual</strong> (inclusivo o masivo), <strong>Accidentes Personales</strong> (masivo) y <strong>Telemedicina</strong>, con sus planes, coberturas, criterios de captura de datos y validaciones asociadas, <strong>cálculo de coberturas</strong>, <strong>fraccionamiento</strong> de prima.</li>
+                  <li><strong>Definición de Repositorio de Usuarios:</strong> acordar el modelo de identidades, roles, perfiles y políticas de administración (registro, autenticación, subusuarios y permisos) que aplicará el portal digital, alineado a la operación del canal y a los requisitos de seguridad y cumplimiento.
+                    <ul class="despliegue-secuencia-portafolio-repo-tipos">
+                      <li>Cliente</li>
+                      <li>Empleado</li>
+                      <li>Aliado Comercial</li>
+                    </ul>
+                  </li>
+                  <li><strong>Flujograma de la Cotización y Emisión:</strong> en cotización, selección de producto/plan, datos del contratante, resumen y decisión de <strong>guardar o emitir</strong>, con las validaciones previstas en el flujo; en emisión, las reglas que sustentan declaración jurada y documentación, beneficiarios, resumen y <strong>póliza emitida</strong>.</li>
+                  <li><strong>Pagos:</strong> el portafolio operativo debe contemplar la <strong>notificación de pago</strong>: pólizas pendientes, <strong>método de pago</strong>, continuidad tras la emisión y la posibilidad de <strong>retomar el pago</strong> desde la consulta cuando no se complete en el acto.</li>
+                </ul>
+              </li>
               <li><strong>Esquemas de Datos:</strong> modelar e implementar en la <strong>base de datos relacional</strong> las estructuras de datos, catálogos, relaciones y persistencia que soporten reglas y tramitación de cotización y emisión. El modelo físico debe incluir asimismo las <strong>tablas</strong> necesarias para la <strong>gestión y administración de los usuarios</strong> con acceso al portal (identidades, roles, permisos, vínculos con el negocio y demás entidades que defina la operación del canal).</li>
               <li><strong>Configuración JSON:</strong> preparar el modelo en JSON de formas configurables (proyectos, pantallas, validaciones) coherente con el <strong>portafolio</strong> y los esquemas de datos. Debe representar, además, el conjunto de <strong>reglas</strong> necesarias para describir las <strong>secuencias de pantallas de captura de datos</strong> de los <strong>procesos de negocio</strong> definidos en ese portafolio (flujos, pasos, transiciones y comportamiento de cada pantalla en el canal).</li>
-              <li><strong>Entornos:</strong> alistar <strong>DEV / QA / PROD</strong>, entendidos como <strong>servidores de aplicaciones</strong> cada uno interactuando con su <strong>instancia de base de datos</strong> correspondiente, con versiones, variables y controles de despliegue consistentes.</li>
-              <li><strong>Correo / SMS:</strong> configurar proveedores, plantillas y políticas de envío para notificaciones transaccionales.</li>
-              <li><strong>Dominio TLS:</strong> asegurar DNS, certificados y publicación HTTPS para el acceso externo protegido; estas características se configuran sobre el <strong>Servidor CloudFront</strong> (borde público del dominio).</li>
-              <li><strong>QA:</strong> ejecutar pruebas de calidad y validación funcional con usuarios de negocio antes de la salida.</li>
+              <li><strong>Entornos:</strong> alistar <strong>DEV / QA / PROD</strong>, entendidos como <strong>servidores de aplicaciones</strong> cada uno interactuando con su <strong>instancia de base de datos</strong> correspondiente, con versiones, variables y controles de despliegue consistentes.
+                <ul class="despliegue-secuencia-entornos-sub">
+                  <li><strong>Correo / SMS:</strong> configurar proveedores, plantillas y políticas de envío para notificaciones transaccionales.</li>
+                </ul>
+              </li>
+              <li><strong>QA:</strong> definir y ejecutar un <strong>plan de pruebas funcionales</strong> con <strong>casos de prueba explícitos por módulo</strong>, tomando como referencia directa el apartado <strong>Servicios a Desarrollar</strong>. El desglose sigue el <strong>mismo orden</strong> en que allí se presentan los cinco módulos; en la ejecución suele <strong>priorizarse</strong> primero <strong>Afiliación y autogestión de usuario</strong> y <strong>Consulta integral de usuarios</strong>, por ser base operativa del canal.
+                <ul class="despliegue-secuencia-qa-sub">
+                  <li><strong>Cotización y emisión de productos de personas:</strong> cotización (selección de producto y plan, datos del contratante, resumen, guardar o emitir) y emisión (documentación, declaración jurada, beneficiarios, resumen, póliza emitida), según el portafolio de personas acordado.</li>
+                  <li><strong>Notificación de pago:</strong> selección de pólizas pendientes, método de pago, continuidad tras la emisión y retoma del pago desde la consulta cuando el flujo no se complete en el acto.</li>
+                  <li><strong>Consulta integral de cotizaciones:</strong> criterios de búsqueda, listado de resultados y acciones disponibles desde la consulta.</li>
+                  <li><strong>Afiliación y autogestión de usuario:</strong> registro e inicio de sesión, recuperación de clave, administración de subusuarios cuando aplique, y operaciones de perfil (clave, preguntas de seguridad, actualización de datos), según el modelo de identidades del canal.</li>
+                  <li><strong>Consulta integral de usuarios:</strong> búsqueda y mantenimiento de cuentas por parte de administradores del portal (altas y ediciones, reinicio de clave, activación o suspensión, asignación de permisos u opciones habilitadas según el modelo de seguridad), con trazabilidad de los cambios.</li>
+                  <li><strong>Validación de negocio:</strong> participación de <strong>usuarios de negocio</strong> para la aceptación del alcance antes de la salida.</li>
+                </ul>
+              </li>
+              <li><strong>Despliegue CloudFront:</strong> asegurar DNS, certificados y publicación HTTPS para el acceso externo protegido; estas características se configuran sobre el <strong>Servidor CloudFront</strong> (borde público del dominio).</li>
               <li><strong>Go-live:</strong> pasar a producción con monitoreo, soporte inicial y plan de contingencia activo.</li>
               </ol>
               </div>
@@ -1866,71 +1906,6 @@ personal, directo o indirecto, en este contrato o propuesta.</span></span></font
 
         <div class="punto-clave punto-clave-expandido texto-justificado punto-servicios-alcance-pdf">
           <span class="numero">4</span>
-          <div class="texto">
-            <h4>Tabla de aristas: qué concretar en cada faceta</h4>
-            <div class="despliegue-tabla-aristas">
-              <p class="despliegue-tabla-aristas-intro">
-              Lista de comprobación para acuerdos entre negocio, arquitectura, infraestructura y operaciones.
-              Los ejemplos son ilustrativos, no prescriptivos.
-              </p>
-              <table class="despliegue-aristas-criteria">
-              <thead>
-              <tr>
-              <th>Faceta</th>
-              <th>Decisiones o entregables típicos</th>
-              </tr>
-              </thead>
-              <tbody>
-              <tr>
-              <td class="despliegue-aristas-dim">Productos a comercializar</td>
-              <td>Catálogo, coberturas, versionado; qué se cotiza y qué se emite; ciclos de vida del producto; criterios de aceptación comercial (SLA, horarios, exclusiones).</td>
-              </tr>
-              <tr>
-              <td class="despliegue-aristas-dim">Formas configurables</td>
-              <td>Proyectos <code>project_*.json</code> o equivalentes, alineados con <code>Project</code>/ibSuiteConf; carga de datos en kernel/entorno; coherencia entre entornos (dev, QA, prod) y trazabilidad de cambios.</td>
-              </tr>
-              <tr>
-              <td class="despliegue-aristas-dim">Servidor aplicativo</td>
-              <td>JDK, perfiles Spring (<code>application.yml</code>), <code>server.servlet.context-path</code>, recursos, JVM (memoria, GC), usuarios de sistema, despliegue del WAR, afinidad y escalado (réplicas, sticky sessions si aplica).</td>
-              </tr>
-              <tr>
-              <td class="despliegue-aristas-dim">Base de datos</td>
-              <td>Motor y versión, esquemas, usuarios mínimo privilegio, cifrado en tránsito (TLS hacia DB), copias, restauración, migraciones (Flyway/Liquibase u operativa manual acordada).</td>
-              </tr>
-              <tr>
-              <td class="despliegue-aristas-dim">Dominio y acceso público</td>
-              <td>Registro DNS (A/AAAA, CNAME), nombres de host acordados, certificados (p. ej. Let’s Encrypt o CA corporativa), cierre de HTTP claro, cabeceras de seguridad, límites de tasa (rate limiting) si aplica.</td>
-              </tr>
-              <tr>
-              <td class="despliegue-aristas-dim">Comunicación con otras apps</td>
-              <td>APIs o mensajería; autenticación (OAuth2, mTLS, API keys con rotación); contratos de notificación, idempotencia y reintentos; manejo de indisponibilidad de terceros.</td>
-              </tr>
-              <tr>
-              <td class="despliegue-aristas-dim">Correo electrónico</td>
-              <td>Relé SMTP, SPF/DKIM/DMARC en el dominio emisor, plantillas, remitente visible, almacenamiento mínimo de PII, colas o reenvío ante fallo.</td>
-              </tr>
-              <tr>
-              <td class="despliegue-aristas-dim">SMS (y canales móviles)</td>
-              <td>Proveedor contratado, reglas de opt-in, plantillas, costos y throttling, cumplimiento de normativas locales.</td>
-              </tr>
-              <tr>
-              <td class="despliegue-aristas-dim">Operación y cumplimiento</td>
-              <td>Registro y retención de logs, alertas, backups comprobados, runbooks, parches, gestión de secretos, roles de acceso y trazas de auditoría.</td>
-              </tr>
-              </tbody>
-              </table>
-              
-              <div class="despliegue-aristas-callout">
-              <strong>Nota de alcance.</strong> Este documento fija un marco común para el despliegue. Los detalles
-              puntuales (puertos, clústeres, proveedores) deben constar en hojas de arquitectura, diagramas C4 o
-              repositorio de operaciones, según el estándar de su organización.
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="punto-clave punto-clave-expandido texto-justificado punto-servicios-alcance-pdf">
-          <span class="numero">5</span>
           <div class="texto">
             <h4>Consideraciones de Desarrollo</h4>
             <ul class="ciclo-desarrollo">
@@ -1944,28 +1919,52 @@ personal, directo o indirecto, en este contrato o propuesta.</span></span></font
         <section class="apartado-propuesta-consolidada-final" aria-label="Propuesta consolidada">
             <div class="bloque-propuesta-consolidada propuesta-consolidada-pdf-una-pagina">
             <p class="titulo-resumen-servicios">Propuesta consolidada</p>
-            <p class="intro-resumen-servicios">Síntesis de las estimaciones de <strong>tiempo</strong> por módulo según el <strong>alcance funcional (complemento)</strong>. La <strong>propuesta económica</strong> global no se desglosa por módulo en esta tabla; los costos se definen en cotización comercial según equipo, tarifas y alcance acordado.</p>
-            <table class="tabla-resumen-servicios-total" role="table" aria-label="Resumen tiempo total Servicios a Desarrollar">
+            <p class="intro-resumen-servicios">Síntesis de <strong>tiempo estimado por etapa</strong>, alineada a la <strong>Secuencia de etapas (orden conceptual)</strong> de este documento (siete hitos). Complete la columna <strong>Tiempo estimado</strong> cuando se disponga de las cifras; el subtotal y el total de tiempo se consolidan a partir de esas filas. La <strong>propuesta económica</strong> global no se desglosa por etapa en esta tabla; los costos se definen en cotización comercial según equipo, tarifas y alcance acordado.</p>
+            <table class="tabla-resumen-servicios-total" role="table" aria-label="Resumen de tiempos por etapa según secuencia de despliegue">
               <thead>
                 <tr>
-                  <th scope="col">Módulo</th>
+                  <th scope="col">Etapa</th>
                   <th class="col-tiempo-resumen" scope="col">Tiempo estimado</th>
                 </tr>
               </thead>
               <tbody>
                 <tr>
-                  <td>1. Acceso al portal</td>
-                  <td class="col-tiempo-resumen">2 semanas</td>
+                  <td>1. Portafolio</td>
+                  <td class="col-tiempo-resumen">—</td>
+                </tr>
+                <tr>
+                  <td>2. Esquemas de Datos</td>
+                  <td class="col-tiempo-resumen">—</td>
+                </tr>
+                <tr>
+                  <td>3. Configuración JSON</td>
+                  <td class="col-tiempo-resumen">—</td>
+                </tr>
+                <tr>
+                  <td>4. Entornos</td>
+                  <td class="col-tiempo-resumen">—</td>
+                </tr>
+                <tr>
+                  <td>5. QA</td>
+                  <td class="col-tiempo-resumen">—</td>
+                </tr>
+                <tr>
+                  <td>6. Despliegue CloudFront</td>
+                  <td class="col-tiempo-resumen">—</td>
+                </tr>
+                <tr>
+                  <td>7. Go-live</td>
+                  <td class="col-tiempo-resumen">—</td>
                 </tr>
               </tbody>
               <tfoot class="resumen-propuesta-totales">
                 <tr>
-                  <th scope="row">Subtotal tiempo (módulos con cifra)</th>
-                  <td class="col-tiempo-resumen">2 semanas</td>
+                  <th scope="row">Subtotal tiempo (etapas con cifra)</th>
+                  <td class="col-tiempo-resumen">—</td>
                 </tr>
                 <tr>
                   <th scope="row">Total alcance estimado</th>
-                  <td class="col-tiempo-resumen">aprox. 10 semanas</td>
+                  <td class="col-tiempo-resumen">—</td>
                 </tr>
                 <tr>
                   <th scope="row">Total costo</th>
@@ -1998,17 +1997,17 @@ personal, directo o indirecto, en este contrato o propuesta.</span></span></font
                 <li><strong>El costo presentado en esta propuesta es cerrado, tomando en cuenta los siguientes aspectos:</strong>
                   <ul style="margin: 0.4rem 0 0 1.25rem; padding-left: 1rem; list-style-type: disc;">
                     <li>Los cambios de especificación una vez iniciado el ciclo de desarrollo pueden implicar el ajuste del costo de la funcionalidad que se desea modificar, lo cual será acordado por ambas partes.</li>
-                    <li>En caso de presentarse algún factor externo, como integración con plataformas de terceros desde el Portal BSO (Pasarela de Pagos, Gestor Documental, etc.) que no permitan la culminación del desarrollo de cualquiera de los módulos indicados y que se prolongue por más de 30 días continuos, entonces dicha funcionalidad se considerará entregada y se procederá a la facturación de la misma.</li>
+                    <li>En caso de presentarse algún factor externo, como integración con plataformas de terceros desde el Portal Digital (Pasarela de Pagos, Gestor Documental, etc.) que no permitan la culminación del desarrollo de cualquiera de los módulos indicados y que se prolongue por más de 30 días continuos, entonces dicha funcionalidad se considerará entregada y se procederá a la facturación de la misma.</li>
                   </ul>
                 </li>
-                <li>Para cada uno de los módulos indicados, se construirán las interfaces web de acuerdo con los ERF proporcionados por BBVA Seguros. También se construirán los programas en PL/SQL para llevar a cabo la integración con Rector, a partir de las especificaciones funcionales y técnicas proporcionadas por BBVA Seguros.</li>
-                <li>Una vez culminado el desarrollo de cada entregable, BBVA Seguros dispondrá de un período de 30 días continuos para realizar el proceso de certificación de esta funcionalidad. En caso de no reportar ningún incidente asociado a las especificaciones del documento ERF, se dará por entregado dicho entregable y se procederá a su facturación.</li>
+                <li>Para cada uno de los módulos indicados, se construirán las interfaces web de acuerdo con los ERF proporcionados por BBVA Seguros. También se construirán los programas en PL/SQL para consulta y registro en Base de Datos, a partir de las especificaciones funcionales y técnicas proporcionadas por BBVA Seguros.</li>
+                <li>Una vez culminado el desarrollo de cada entregable, BBVA Seguros dispondrá de un período de 30 días continuos para realizar el proceso de certificación de esta funcionalidad. En caso de no reportar ningún incidente asociado a las especificaciones del documento de Especificacion, se dará por entregado dicho entregable y se procederá a su facturación.</li>
                 <li>Esta propuesta solo considera la integración en los ambientes de desarrollo, calidad y producción de BBVA Seguros. Para integración en ambientes adicionales por causas no imputables a ibSoft Development, dichas horas adicionales serán facturadas a la misma tasa de las horas correspondientes a este presupuesto.</li>
                 <li>En caso de reinstalación de ambientes por causas no imputables a ibSoft Development, dichas horas adicionales serán facturadas a la misma tasa de las horas correspondientes a este presupuesto.</li>
                 <li>En caso de requerirse ciclos de pruebas adicionales por causas no imputables a ibSoft Development, dichas horas adicionales serán facturadas a la misma tasa de las horas correspondientes a este presupuesto.</li>
                 <li>Se extenderá una garantía de 30 días para corregir cualquier incidente, siempre y cuando el mismo corresponda a una falla en los programas asociados a la funcionalidad que presenta la falla y no sea derivado de:
                   <ul style="margin: 0.4rem 0 0 1.25rem; padding-left: 1rem; list-style-type: disc;">
-                    <li>Mal funcionamiento de Rector.</li>
+                    <li>Mal funcionamiento de ALEA.</li>
                     <li>Fallas en la infraestructura donde se ejecutan las aplicaciones.</li>
                     <li>Modificación en las reglas de negocio.</li>
                     <li>Otros factores externos al componente desplegado.</li>

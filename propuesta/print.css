@@ -240,16 +240,14 @@
     page-break-inside: avoid;
   }
 
-  .despliegue-secuencia-etapas .diagram-card {
+  .despliegue-arquitectura-cloudfront-nota {
     break-inside: avoid;
     page-break-inside: avoid;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
   }
 
-  .despliegue-aristas-criteria {
-    break-inside: auto;
-    page-break-inside: auto;
-  }
-  .despliegue-aristas-callout {
+  .despliegue-secuencia-etapas .diagram-card {
     break-inside: avoid;
     page-break-inside: avoid;
   }
